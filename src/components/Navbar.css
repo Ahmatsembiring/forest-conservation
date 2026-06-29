@@ -1,0 +1,127 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+
+.navbar.scrolled .logo {
+  color: var(--primary-color);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+.nav-links a {
+  color: var(--white);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.navbar.scrolled .nav-links a {
+  color: var(--primary-color);
+}
+
+.navbar.scrolled .nav-links a:hover {
+  color: var(--accent-color);
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--white);
+  transition: color 0.3s;
+}
+
+.navbar.scrolled .hamburger {
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    z-index: 1001;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background: var(--white);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+}

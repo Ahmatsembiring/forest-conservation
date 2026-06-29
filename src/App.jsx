@@ -6,6 +6,7 @@ import Projects from './components/Projects'
 import Gallery from './components/Gallery'
 import Blog from './components/Blog'
 import Footer from './components/Footer'
+import ScrollIndicator from './components/ScrollIndicator'
 import './App.css'
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['hero', 'about', 'projects', 'gallery', 'blog']
-      const scrollPosition = window.scrollY + window.innerHeight / 2
+      const scrollPosition = window.scrollY + window.innerHeight / 3
 
       sections.forEach((section, index) => {
         const element = document.getElementById(section)

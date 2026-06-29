@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="hero-overlay"></div>
       </div>
       
-      <div className="hero-content">
+      <div className="hero-content container">
         <motion.h1 
           className="hero-title"
           initial={{ opacity: 0, y: 50 }}
@@ -36,32 +36,42 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <button className="btn-primary">JOIN US NOW</button>
-          <button className="btn-secondary">
+          <motion.button 
+            className="btn-primary"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            JOIN US NOW
+          </motion.button>
+          <motion.button 
+            className="btn-secondary"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             <FaPlay /> Watch Video
-          </button>
+          </motion.button>
+        </motion.div>
+
+        <motion.div 
+          className="hero-stats"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <div className="stat-item">
+            <h3>50%</h3>
+            <p>Species Habitat</p>
+          </div>
+          <div className="stat-item">
+            <h3>1.6B</h3>
+            <p>People Depend</p>
+          </div>
+          <div className="stat-item">
+            <h3>30%</h3>
+            <p>Land Coverage</p>
+          </div>
         </motion.div>
       </div>
-
-      <motion.div 
-        className="hero-stats"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.8 }}
-      >
-        <div className="stat-item">
-          <h3>50%</h3>
-          <p>Species Habitat</p>
-        </div>
-        <div className="stat-item">
-          <h3>1.6B</h3>
-          <p>People Depend</p>
-        </div>
-        <div className="stat-item">
-          <h3>30%</h3>
-          <p>Land Coverage</p>
-        </div>
-      </motion.div>
     </section>
   )
 }

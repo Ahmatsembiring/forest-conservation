@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { FaBars, FaTimes, FaTree } from 'react-icons/fa'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -19,6 +19,7 @@ const Navbar = () => {
     { name: 'Home', href: '#hero' },
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Gallery', href: '#gallery' },
     { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: '#contact' },
   ]
@@ -30,13 +31,15 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="navbar-container">
-        <motion.div 
+      <div className="navbar-container container">
+        <motion.a 
+          href="#hero"
           className="logo"
           whileHover={{ scale: 1.05 }}
         >
-          🌲 GREENALE
-        </motion.div>
+          <FaTree className="logo-icon" />
+          <span>GREENALE</span>
+        </motion.a>
 
         <div className="hamburger" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
           {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
@@ -47,6 +50,7 @@ const Navbar = () => {
             <motion.li 
               key={index}
               whileHover={{ scale: 1.1 }}
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               <a href={link.href}>{link.name}</a>
             </motion.li>
