@@ -18,7 +18,7 @@ const Gallery = () => {
   ]
 
   return (
-    <section id="gallery" className="gallery section-padding">
+    <section className="gallery section-padding">
       <div className="container">
         <motion.div 
           className="section-title"

@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { Link, useLocation } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion'
 import { FaBars, FaTimes, FaTree } from 'react-icons/fa'
 import './Navbar.css'
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,13 +17,16 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    setIsMobileMenuOpen(false)
+  }, [location])
+
   const navLinks = [
-    { name: 'Home', href: '#hero' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Gallery', href: '#gallery' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Projects', path: '/projects' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'Blog', path: '/blog' },
   ]
 
   return (
@@ -32,14 +37,10 @@ const Navbar = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="navbar-container container">
-        <motion.a 
-          href="#hero"
-          className="logo"
-          whileHover={{ scale: 1.05 }}
-        >
+        <Link to="/" className="logo">
           <FaTree className="logo-icon" />
           <span>GREENALE</span>
-        </motion.a>
+        </Link>
 
         <div className="hamburger" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
           {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
@@ -50,9 +51,13 @@ const Navbar = () => {
             <motion.li 
               key={index}
               whileHover={{ scale: 1.1 }}
-              onClick={() => setIsMobileMenuOpen(false)}
             >
-              <a href={link.href}>{link.name}</a>
+              <Link 
+                to={link.path}
+                className={location.pathname === link.path ? 'active' : ''}
+              >
+                {link.name}
+              </Link>
             </motion.li>
           ))}
         </ul>

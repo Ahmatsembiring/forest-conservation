@@ -4,7 +4,7 @@ import './Footer.css'
 
 const Footer = () => {
   return (
-    <footer id="contact" className="footer">
+    <footer className="footer">
       <div className="container">
         <div className="footer-content">
           <motion.div 
@@ -38,10 +38,10 @@ const Footer = () => {
           >
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="#about">About Us</a></li>
-              <li><a href="#projects">Our Projects</a></li>
-              <li><a href="#gallery">Gallery</a></li>
-              <li><a href="#blog">Blog</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/projects">Our Projects</a></li>
+              <li><a href="/gallery">Gallery</a></li>
+              <li><a href="/blog">Blog</a></li>
               <li><a href="#">Get Involved</a></li>
             </ul>
           </motion.div>
@@ -79,7 +79,7 @@ const Footer = () => {
           >
             <h3>Newsletter</h3>
             <p>Subscribe to get updates on our conservation efforts</p>
-            <form className="newsletter-form">
+            <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
               <input type="email" placeholder="Your email address" required />
               <button type="submit">Subscribe</button>
             </form>

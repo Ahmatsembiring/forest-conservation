@@ -3,20 +3,13 @@
   position: relative;
 }
 
-/* Scroll Indicator Position */
-.scroll-indicator-wrapper {
-  position: fixed;
-  right: 30px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1000;
+.page-wrapper {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 15px;
 }
 
-@media (max-width: 768px) {
-  .scroll-indicator-wrapper {
-    display: none;
-  }
+.page-content {
+  flex: 1;
+  padding-top: 80px;
 }

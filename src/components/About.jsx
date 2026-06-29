@@ -4,40 +4,16 @@ import './About.css'
 
 const About = () => {
   const features = [
-    {
-      icon: <FaLeaf />,
-      title: 'Ecological Balance',
-      description: 'Forests maintain the balance of ecosystems and support biodiversity across the planet.'
-    },
-    {
-      icon: <FaWater />,
-      title: 'Water Conservation',
-      description: 'Forests regulate water cycles, protect watersheds, and ensure clean water supply.'
-    },
-    {
-      icon: <FaWind />,
-      title: 'Climate Regulation',
-      description: 'Trees absorb CO2 and produce oxygen, playing a crucial role in climate stability.'
-    },
-    {
-      icon: <FaHeartbeat />,
-      title: 'Human Health',
-      description: 'Clean air and natural environments significantly improve quality of life and health.'
-    },
-    {
-      icon: <FaTree />,
-      title: 'Biodiversity',
-      description: 'Home to 80% of terrestrial species, forests are essential for wildlife conservation.'
-    },
-    {
-      icon: <FaGlobe />,
-      title: 'Global Impact',
-      description: 'Forests cover 30% of Earth land and are vital for planetary health.'
-    }
+    { icon: <FaLeaf />, title: 'Ecological Balance', description: 'Forests maintain the balance of ecosystems and support biodiversity across the planet.' },
+    { icon: <FaWater />, title: 'Water Conservation', description: 'Forests regulate water cycles, protect watersheds, and ensure clean water supply.' },
+    { icon: <FaWind />, title: 'Climate Regulation', description: 'Trees absorb CO2 and produce oxygen, playing a crucial role in climate stability.' },
+    { icon: <FaHeartbeat />, title: 'Human Health', description: 'Clean air and natural environments significantly improve quality of life and health.' },
+    { icon: <FaTree />, title: 'Biodiversity', description: 'Home to 80% of terrestrial species, forests are essential for wildlife conservation.' },
+    { icon: <FaGlobe />, title: 'Global Impact', description: 'Forests cover 30% of Earth land and are vital for planetary health.' }
   ]
 
   return (
-    <section id="about" className="about section-padding">
+    <section className="about section-padding">
       <div className="container">
         <motion.div 
           className="section-title"

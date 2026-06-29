@@ -34,7 +34,7 @@ const Blog = () => {
   ]
 
   return (
-    <section id="blog" className="blog section-padding">
+    <section className="blog section-padding">
       <div className="container">
         <motion.div 
           className="section-title"
