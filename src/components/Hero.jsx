@@ -49,13 +49,7 @@ const Hero = () => {
             >
               JOIN US NOW
             </motion.button>
-            <motion.button 
-              className="btn-secondary"
-              whileHover={{ scale: 1.05, backgroundColor: "#fff", color: "#2d5a27" }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FaPlay /> Watch Video
-            </motion.button>
+            
           </motion.div>
 
           <motion.div 
