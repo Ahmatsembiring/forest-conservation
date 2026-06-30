@@ -4,13 +4,13 @@ import Footer from '../components/Footer'
 
 function Projects() {
   return (
-    <div className="page-wrapper">
+    <>
       <Navbar />
-      <div className="page-content">
+      <div style={{ paddingTop: '80px' }}>
         <ProjectsSection />
       </div>
       <Footer />
-    </div>
+    </>
   )
 }
 
