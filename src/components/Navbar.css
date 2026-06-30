@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 0;
+  padding: 25px 0;
   z-index: 1000;
   transition: all 0.3s ease;
   background: transparent;
@@ -12,7 +12,7 @@
 .navbar.scrolled {
   background: rgba(26, 61, 23, 0.98) !important;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-  padding: 15px 0;
+  padding: 18px 0;
 }
 
 .navbar.always-visible {
@@ -21,9 +21,9 @@
 }
 
 .navbar-container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,12 +32,13 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.8rem;
+  gap: 12px;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #ffffff !important;
   text-decoration: none;
   transition: all 0.3s;
+  letter-spacing: 1px;
 }
 
 .logo-icon {
@@ -48,9 +49,12 @@
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 35px;
+  gap: 45px;
   margin: 0;
   padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-links li {
@@ -60,11 +64,12 @@
 .nav-links a {
   color: #ffffff !important;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.95rem;
   text-decoration: none;
   transition: all 0.3s;
   position: relative;
   padding: 5px 0;
+  letter-spacing: 0.5px;
 }
 
 .nav-links a::after {
@@ -91,12 +96,8 @@
   z-index: 1001;
 }
 
-/* Responsive - Mobile Menu */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
+/* Responsive */
+@media (max-width: 1024px) {
   .nav-links {
     position: fixed;
     top: 0;
@@ -110,33 +111,33 @@
     gap: 40px;
     transition: right 0.3s ease;
     box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
-    padding: 0;
+    transform: none;
+    left: auto;
   }
 
   .nav-links.active {
     right: 0;
   }
 
-  .nav-links a {
-    font-size: 1.3rem;
+  .hamburger {
+    display: block;
   }
 
-  .navbar.scrolled .logo,
-  .navbar.always-visible .logo {
-    font-size: 1.5rem;
+  .navbar-container {
+    padding: 0 30px;
   }
 }
 
-@media (max-width: 480px) {
-  .nav-links {
-    width: 80%;
-  }
-
+@media (max-width: 768px) {
   .logo {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .logo-icon {
     font-size: 1.6rem;
+  }
+
+  .nav-links a {
+    font-size: 1.2rem;
   }
 }
