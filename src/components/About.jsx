@@ -17,10 +17,10 @@ const About = () => {
       <div className="container">
         <motion.div 
           className="section-title"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
         >
           <h2>About Forestry</h2>
           <p>Understanding the vital role of forests in our world and why conservation matters</p>
@@ -31,13 +31,19 @@ const About = () => {
             <motion.div 
               key={index}
               className="feature-card"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
               whileHover={{ y: -10, boxShadow: '0 15px 40px rgba(0,0,0,0.15)' }}
             >
-              <div className="feature-icon">{feature.icon}</div>
+              <motion.div 
+                className="feature-icon"
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.6 }}
+              >
+                {feature.icon}
+              </motion.div>
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
             </motion.div>
@@ -46,23 +52,40 @@ const About = () => {
 
         <motion.div 
           className="about-content"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
         >
           <div className="about-text">
-            <h3>Why Forest Conservation Matters</h3>
-            <p>
+            <motion.h3
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Why Forest Conservation Matters
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               Forests are more than just trees. They are complex ecosystems that support life on Earth. 
               From providing oxygen to regulating climate, from supporting biodiversity to sustaining 
               human livelihoods, forests play an irreplaceable role in maintaining the health of our planet.
-            </p>
-            <p>
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
               However, deforestation and forest degradation continue at alarming rates. Every year, 
               millions of hectares of forests are lost, threatening wildlife, disrupting water cycles, 
               and accelerating climate change. The time to act is now.
-            </p>
+            </motion.p>
             <motion.button 
               className="btn-primary"
               whileHover={{ scale: 1.05 }}
@@ -71,12 +94,18 @@ const About = () => {
               Learn More
             </motion.button>
           </div>
-          <div className="about-image">
+          <motion.div 
+            className="about-image"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <img 
               src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=800&q=80" 
               alt="Forest Conservation"
             />
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

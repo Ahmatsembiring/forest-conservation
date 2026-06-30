@@ -32,10 +32,10 @@ const Projects = () => {
       <div className="container">
         <motion.div 
           className="section-title"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
         >
           <h2>Conservation Programs</h2>
           <p>Our active projects making a real difference in forest conservation</p>
@@ -46,9 +46,9 @@ const Projects = () => {
             <motion.div 
               key={index}
               className="project-card"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
               whileHover={{ y: -10 }}
             >
@@ -61,7 +61,13 @@ const Projects = () => {
                 <p>{project.description}</p>
                 <div className="project-progress">
                   <div className="progress-bar">
-                    <div className="progress" style={{ width: `${project.progress}%` }}></div>
+                    <motion.div 
+                      className="progress" 
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${project.progress}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1.5, delay: 0.5 }}
+                    ></motion.div>
                   </div>
                   <span>{project.progress}% Complete</span>
                 </div>

@@ -22,10 +22,10 @@ const Gallery = () => {
       <div className="container">
         <motion.div 
           className="section-title"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
         >
           <h2>Gallery</h2>
           <p>Explore the beauty and diversity of our forests</p>
@@ -38,18 +38,22 @@ const Gallery = () => {
               className="gallery-item"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
               whileHover={{ scale: 1.05 }}
               onClick={() => setSelectedImage(image)}
             >
               <img src={image.src} alt={image.alt} loading="lazy" />
-              <div className="gallery-overlay">
+              <motion.div 
+                className="gallery-overlay"
+                initial={{ opacity: 0 }}
+                whileHover={{ opacity: 1 }}
+              >
                 <div className="overlay-content">
                   <FaSearchPlus className="overlay-icon" />
                   <span>{image.category}</span>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
@@ -64,15 +68,19 @@ const Gallery = () => {
             exit={{ opacity: 0 }}
             onClick={() => setSelectedImage(null)}
           >
-            <button className="close-btn">
+            <motion.button 
+              className="close-btn"
+              initial={{ rotate: 0 }}
+              whileHover={{ rotate: 90 }}
+            >
               <FaTimes />
-            </button>
+            </motion.button>
             <motion.img 
               src={selectedImage.src} 
               alt={selectedImage.alt}
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             />
             <div className="lightbox-info">
