@@ -5,15 +5,15 @@
 }
 
 :root {
-  --primary-color: #2d5a27;
-  --secondary-color: #4a7c43;
-  --accent-color: #7cb342;
-  --light-green: #8bc34a;
+  --primary-color: #1a3d17;
+  --secondary-color: #2d5a27;
+  --accent-color: #4a7c43;
+  --light-green: #7cb342;
   --text-dark: #1a1a1a;
   --text-light: #666;
-  --bg-light: #f8f9fa;
+  --bg-light: #f0f4f0;
   --white: #ffffff;
-  --shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  --shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
 html {
@@ -81,7 +81,7 @@ img {
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: var(--accent-color);
+  background: var(--light-green);
   border-radius: 2px;
 }
 
