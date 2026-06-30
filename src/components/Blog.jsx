@@ -38,10 +38,10 @@ const Blog = () => {
       <div className="container">
         <motion.div 
           className="section-title"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8 }}
         >
           <h2>Latest Articles</h2>
           <p>Stay informed about forest conservation and environmental issues</p>
@@ -52,15 +52,23 @@ const Blog = () => {
             <motion.article 
               key={article.id}
               className="blog-card"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
               whileHover={{ y: -10 }}
             >
               <div className="blog-image">
                 <img src={article.image} alt={article.title} loading="lazy" />
-                <div className="blog-category">{article.category}</div>
+                <motion.div 
+                  className="blog-category"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                >
+                  {article.category}
+                </motion.div>
               </div>
               <div className="blog-content">
                 <div className="blog-meta">
@@ -82,10 +90,10 @@ const Blog = () => {
 
         <motion.div 
           className="blog-cta"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
         >
           <h3>Want to Learn More?</h3>
           <p>Subscribe to our newsletter for the latest updates on forest conservation</p>
