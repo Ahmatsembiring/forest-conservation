@@ -11,7 +11,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+      setIsScrolled(window.scrollY > 100) // Muncul setelah scroll 100px
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -29,8 +29,16 @@ const Navbar = () => {
     { name: 'Blog', path: '/blog' },
   ]
 
+  // Cek apakah sedang di halaman home
+  const isHomePage = location.pathname === '/'
+
   return (
-    <nav className="navbar">
+    <motion.nav 
+      className={`navbar ${isScrolled ? 'scrolled' : ''} ${!isHomePage ? 'always-visible' : ''}`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="navbar-container">
         <Link to="/" className="logo">
           <FaTree className="logo-icon" />
@@ -54,7 +62,7 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   )
 }
 

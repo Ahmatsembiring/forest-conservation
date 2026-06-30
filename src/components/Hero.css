@@ -182,3 +182,143 @@
     text-align: center;
   }
 }
+/* Tambahkan di bagian paling bawah Hero.css */
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-title .highlight {
+    font-size: 4rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    max-width: 500px;
+  }
+
+  .hero-stats {
+    gap: 30px;
+  }
+
+  .stat-item h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 150px 0 60px; /* Lebih banyak padding atas untuk mobile */
+  }
+
+  .hero-content {
+    padding: 0 20px;
+  }
+
+  .hero-text-left {
+    max-width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .hero-title .highlight {
+    font-size: 3rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .stat-item {
+    text-align: center;
+  }
+
+  .stat-item h3 {
+    font-size: 2.5rem;
+  }
+
+  .navbar {
+    padding: 15px 0;
+  }
+
+  .navbar.scrolled {
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 130px 0 40px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-title .highlight {
+    font-size: 2.3rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    gap: 12px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 15px 30px;
+    font-size: 0.9rem;
+  }
+
+  .stat-item h3 {
+    font-size: 2rem;
+  }
+
+  .stat-item p {
+    font-size: 0.9rem;
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .logo-icon {
+    font-size: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+  }
+}
