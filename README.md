@@ -1,16 +1,123 @@
-# React + Vite
+# 🌲 Greenale - Forest Conservation Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Website edukasi dan konservasi hutan yang dibangun dengan React.js, menampilkan informasi tentang pentingnya pelestarian hutan, program konservasi, galeri foto, dan artikel terkini.
 
-Currently, two official plugins are available:
+![Greenale Forest Conservation](https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&q=80)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Fitur Utama
 
-## React Compiler
+### 🏠 Halaman Home
+- Hero section dengan background hutan fullscreen
+- Animasi smooth saat halaman dimuat
+- Statistik penting tentang hutan (50% Species Habitat, 1.6B People Depend, 30% Land Coverage)
+- Call-to-action button "Join Us Now"
+- Navbar transparan yang muncul saat scroll
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### ℹ️ Halaman About
+- Informasi tentang pentingnya kehutanan
+- 6 fitur utama: Ecological Balance, Water Conservation, Climate Regulation, Human Health, Biodiversity, Global Impact
+- Penjelasan detail tentang konservasi hutan
+- Layout responsif dengan card design
 
-## Expanding the Oxlint configuration
+### 🌱 Halaman Projects
+- Program konservasi aktif (Reforestation, Community Engagement, Wildlife Protection)
+- Progress bar untuk setiap program
+- Card design dengan hover effects
+- Informasi detail tentang setiap project
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### 🖼️ Halaman Gallery
+- Koleksi foto hutan, satwa liar, dan flora
+- Lightbox untuk melihat foto dalam ukuran penuh
+- Kategori foto (Forest, Wildlife, Flora, Landscape)
+- Grid layout responsif
+
+### 📰 Halaman Blog
+- Artikel terkini tentang konservasi hutan
+- Kategori artikel (Climate, Sustainability, Wildlife)
+- Informasi penulis dan tanggal publikasi
+- Newsletter subscription
+
+### 🎨 Fitur Tambahan
+- **Multi-page routing** dengan React Router
+- **Animasi smooth** menggunakan Framer Motion
+- **Fully responsive** (Desktop, Tablet, Mobile)
+- **Navbar adaptif** (transparan di home, solid di halaman lain)
+- **Smooth scrolling** antar halaman
+- **Modern UI/UX** dengan color palette hijau alam
+
+## 🛠️ Teknologi yang Digunakan
+
+- **React 18** - Library JavaScript untuk UI
+- **Vite** - Build tool dan development server
+- **React Router DOM** - Routing untuk multi-page
+- **Framer Motion** - Animasi dan transisi
+- **React Icons** - Icon library
+- **CSS3** - Styling dengan CSS Variables
+- **JavaScript (ES6+)** - Logic dan interaktivitas
+
+## 📦 Instalasi
+
+### Prasyarat
+- Node.js (versi 16 atau lebih baru)
+- npm atau yarn
+
+### Langkah Instalasi
+
+1. **Clone repository**
+   ```bash
+   git clone [repository-url]
+   cd forest-conservation
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Jalankan development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Buka browser**
+   ```
+   http://localhost:5173
+   ```
+
+## 📁 Struktur Project
+
+```
+forest-conservation/
+├── public/
+│   └── assets/
+├── src/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   └── ...
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   ├── Projects.jsx
+│   │   ├── Gallery.jsx
+│   │   └── Blog.jsx
+│   ├── styles/
+│   ├── App.jsx
+│   └── main.jsx
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## 🚀 Scripts
+
+```bash
+# Jalankan development server
+npm run dev
+
+# Build untuk production
+npm run build
+
+# Preview build production
+npm run preview
+```
