@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { FaBars, FaTimes, FaTree } from 'react-icons/fa'
 import './Navbar.css'
 
@@ -30,13 +30,8 @@ const Navbar = () => {
   ]
 
   return (
-    <motion.nav 
-      className={`navbar ${isScrolled ? 'scrolled' : ''}`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="navbar-container container">
+    <nav className="navbar">
+      <div className="navbar-container">
         <Link to="/" className="logo">
           <FaTree className="logo-icon" />
           <span>GREENALE</span>
@@ -48,21 +43,18 @@ const Navbar = () => {
 
         <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
           {navLinks.map((link, index) => (
-            <motion.li 
-              key={index}
-              whileHover={{ scale: 1.1 }}
-            >
+            <li key={index}>
               <Link 
                 to={link.path}
                 className={location.pathname === link.path ? 'active' : ''}
               >
                 {link.name}
               </Link>
-            </motion.li>
+            </li>
           ))}
         </ul>
       </div>
-    </motion.nav>
+    </nav>
   )
 }
 
