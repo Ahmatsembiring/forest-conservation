@@ -66,20 +66,7 @@ const Hero = () => {
               are home to 50 percent of all terrestrial species on Earth.
             </motion.p>
 
-            <motion.div 
-              className="hero-buttons"
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.7 }}
-            >
-              <motion.button 
-                className="btn-primary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                JOIN US NOW
-              </motion.button>
-            </motion.div>
+            
 
             <motion.div 
               className="hero-stats"

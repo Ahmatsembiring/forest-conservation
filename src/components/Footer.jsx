@@ -70,20 +70,7 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          <motion.div 
-            className="footer-section"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-          >
-            <h3>Newsletter</h3>
-            <p>Subscribe to get updates on our conservation efforts</p>
-            <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-              <input type="email" placeholder="Your email address" required />
-              <button type="submit">Subscribe</button>
-            </form>
-          </motion.div>
+          
         </div>
 
         <motion.div 
