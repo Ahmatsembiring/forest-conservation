@@ -1,105 +1,12 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { FaPaw, FaBird, FaDragon } from 'react-icons/fa'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import WildlifeCard, { WildlifeModal } from '../components/WildlifeCard'
-import { motion } from 'framer-motion'
 import './WildlifeProtection.css'
 
 const WildlifeProtection = () => {
-  const [selectedAnimal, setSelectedAnimal] = useState(null)
-
-  // Data satwa liar Indonesia
-  const wildlifeData = [
-    {
-      id: 1,
-      name: 'Gajah Sumatera',
-      scientificName: 'Elephas maximus sumatranus',
-      image: 'https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?w=800&q=80',
-      legalStatus: 'Dilindungi penuh',
-      iucnStatus: 'Critically Endangered (CR)',
-      citesStatus: 'Appendix I',
-      description: 'Gajah Sumatera adalah subspesies gajah Asia yang endemik Pulau Sumatera. Populasi liar diperkirakan kurang dari 1.500 individu, tersebar dalam fragmented populations di seluruh Sumatera. Ancaman utama meliputi hilangnya habitat akibat konversi hutan, konflik manusia-gajah, dan perburuan untuk gading (pada gajah jantan).',
-      reference: 'https://www.iucnredlist.org/species/7140/199704532'
-    },
-    {
-      id: 2,
-      name: 'Harimau Sumatera',
-      scientificName: 'Panthera tigris sumatrae',
-      image: 'https://images.unsplash.com/photo-1500964757637-c85e8a162699?w=800&q=80',
-      legalStatus: 'Dilindungi penuh',
-      iucnStatus: 'Critically Endangered (CR)',
-      citesStatus: 'Appendix I',
-      description: 'Harimau Sumatera adalah subspesies harimau terakhir yang masih bertahan di Indonesia, setelah punahnya Harimau Jawa dan Harimau Bali pada abad ke-20. Populasi liar diperkirakan kurang dari 600 individu, menjadikannya salah satu kucing besar paling terancam di dunia.',
-      reference: 'https://www.iucnredlist.org/species/15966/163777889'
-    },
-    {
-      id: 3,
-      name: 'Orangutan Sumatera',
-      scientificName: 'Pongo abelii',
-      image: 'https://images.unsplash.com/photo-1535083783855-76ae62b2914e?w=800&q=80',
-      legalStatus: 'Dilindungi penuh',
-      iucnStatus: 'Critically Endangered (CR)',
-      citesStatus: 'Appendix I',
-      description: 'Orangutan Sumatera adalah salah satu dari tiga spesies orangutan yang ada di Indonesia. Populasi tersisa sekitar 14.000 individu. Ancaman utama adalah deforestasi untuk perkebunan kelapa sawit dan pertambangan.',
-      reference: 'https://www.iucnredlist.org/species/17975/17966313'
-    },
-    {
-      id: 4,
-      name: 'Badak Sumatera',
-      scientificName: 'Dicerorhinus sumatrensis',
-      image: 'https://images.unsplash.com/photo-1535591279841-b9a0e2f6f5b5?w=800&q=80',
-      legalStatus: 'Dilindungi penuh',
-      iucnStatus: 'Critically Endangered (CR)',
-      citesStatus: 'Appendix I',
-      description: 'Badak Sumatera adalah badak berambut terkecil di dunia. Diperkirakan tersisa kurang dari 80 individu. Permintaan cula badak di pasar gelap Asia tetap menjadi pendorong utama perburuan liar.',
-      reference: 'https://www.iucnredlist.org/species/6557/199704532'
-    },
-    {
-      id: 5,
-      name: 'Elang Jawa',
-      scientificName: 'Nisaetus bartelsi',
-      image: 'https://images.unsplash.com/photo-1611004218472-1632f54cb68e?w=800&q=80',
-      legalStatus: 'Dilindungi penuh',
-      iucnStatus: 'Endangered (EN)',
-      citesStatus: 'Appendix II',
-      description: 'Elang Jawa adalah burung endemik Indonesia yang menjadi simbol negara (Garuda). Populasi diperkirakan kurang dari 1.000 individu dewasa. Ancaman utama adalah hilangnya habitat dan perdagangan ilegal.',
-      reference: 'https://www.iucnredlist.org/species/22696052/131796079'
-    },
-    {
-      id: 6,
-      name: 'Komodo',
-      scientificName: 'Varanus komodoensis',
-      image: 'https://images.unsplash.com/photo-1516934024742-b461fba47600?w=800&q=80',
-      legalStatus: 'Dilindungi penuh',
-      iucnStatus: 'Endangered (EN)',
-      citesStatus: 'Appendix I',
-      description: 'Komodo adalah reptil purba terbesar di dunia yang hanya ditemukan di Indonesia (Pulau Komodo, Rinca, dan sekitarnya). Populasi sekitar 1.500 individu dewasa. Status dilindungi penuh karena populasi yang sangat terbatas secara geografis.',
-      reference: 'https://www.iucnredlist.org/species/17823/119164893'
-    },
-    {
-      id: 7,
-      name: 'Penyu Hijau',
-      scientificName: 'Chelonia mydas',
-      image: 'https://images.unsplash.com/photo-1437622368342-7a3d73180219?w=800&q=80',
-      legalStatus: 'Dilindungi penuh',
-      iucnStatus: 'Endangered (EN)',
-      citesStatus: 'Appendix I',
-      description: 'Penyu Hijau adalah spesies penyu yang banyak ditemukan di perairan Indonesia. Ancaman utama meliputi perburuan untuk daging dan telur, kerusakan habitat peneluran, dan tangkapan sampingan (bycatch) dari aktivitas perikanan.',
-      reference: 'https://www.iucnredlist.org/species/4615/11037468'
-    },
-    {
-      id: 8,
-      name: 'Beruang Madu',
-      scientificName: 'Helarctos malayanus',
-      image: 'https://images.unsplash.com/photo-1516934024742-b461fba47600?w=800&q=80',
-      legalStatus: 'Dilindungi penuh',
-      iucnStatus: 'Vulnerable (VU)',
-      citesStatus: 'Appendix I',
-      description: 'Beruang Madu adalah spesies beruang terkecil di dunia dan satu-satunya beruang asli Indonesia. Ancaman utama adalah perburuan untuk empedu (dipercaya berkhasiat obat) serta perdagangan ilegal sebagai satwa peliharaan eksotis.',
-      reference: 'https://www.iucnredlist.org/species/9757/161234979'
-    }
-  ]
-
   return (
     <>
       <Navbar />
@@ -114,43 +21,254 @@ const WildlifeProtection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Status Perlindungan Satwa Kunci Indonesia
+              Status Perlindungan, Konservasi, dan Regulasi Perdagangan
             </motion.h1>
-            <motion.p 
-              className="subtitle"
+            <motion.h2 
+              className="hero-subtitle"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Gajah • Harimau • Badak • Orangutan • Aves • Herpetofauna
+              Satwa Kunci Indonesia
+            </motion.h2>
+            <motion.p 
+              className="hero-tags"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              Gajah Sumatera • Harimau Sumatera • Badak • Orangutan • Aves • Herpetofauna
+            </motion.p>
+            <motion.p 
+              className="hero-description"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              Kajian berdasarkan Undang-Undang Republik Indonesia, Status IUCN Red List, dan Appendix CITES
             </motion.p>
           </div>
         </section>
 
-        {/* Wildlife Cards Grid */}
-        <section className="wp-cards section-padding">
+        {/* Introduction - Storytelling */}
+        <section className="wp-intro section-padding">
           <div className="container">
-            <h2 className="section-title">Klik Gambar untuk Melihat Detail</h2>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div className="intro-content">
+                <p className="intro-text">
+                  Indonesia merupakan salah satu negara <strong>megabiodiversity</strong> dunia, menempati posisi strategis 
+                  dalam peta keanekaragaman hayati global bersama Brasil dan Republik Demokratik Kongo.
+                </p>
+                <p className="intro-text">
+                  Pulau Sumatera, sebagai salah satu pusat keanekaragaman hayati terpenting, menjadi habitat bagi 
+                  sejumlah spesies ikonik yang berstatus terancam punah tingkat global: <strong>Gajah Sumatera</strong>, 
+                  <strong> Harimau Sumatera</strong>, <strong>Badak Sumatera</strong>, dan <strong>Orangutan Sumatera/Tapanuli</strong>.
+                </p>
+                <p className="intro-text">
+                  Di luar mamalia besar tersebut, kelompok burung (aves) dan herpetofauna (reptil dan amfibi) Indonesia 
+                  juga menghadapi tekanan serupa akibat hilangnya habitat, perburuan, dan perdagangan ilegal.
+                </p>
+                
+                <div className="intro-highlight">
+                  <p>
+                    Perlindungan terhadap satwa-satwa ini diatur melalui <strong>tiga kerangka kerja yang saling melengkapi</strong>: 
+                    (1) hukum nasional Indonesia, (2) penilaian ilmiah status konservasi oleh IUCN, dan (3) regulasi 
+                    perdagangan internasional melalui CITES.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Three Frameworks */}
+        <section className="wp-frameworks section-padding bg-light">
+          <div className="container">
+            <h2 className="section-title">Tiga Lapis Status: Perbedaan Konseptual</h2>
             
-            <div className="wildlife-grid">
-              {wildlifeData.map((animal) => (
-                <WildlifeCard 
-                  key={animal.id} 
-                  animal={animal} 
-                  onClick={setSelectedAnimal}
-                />
-              ))}
+            <div className="framework-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Aspek</th>
+                    <th>Sumber</th>
+                    <th>Sifat</th>
+                    <th>Fungsi</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Status Hukum RI</strong></td>
+                    <td>UU 5/1990, PP 7/1999</td>
+                    <td>Mengikat secara hukum nasional</td>
+                    <td>Menentukan boleh/tidaknya pemanfaatan & perdagangan di Indonesia</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Status IUCN Red List</strong></td>
+                    <td>Penilaian ilmiah IUCN</td>
+                    <td>Tidak mengikat hukum, bersifat indikatif</td>
+                    <td>Mengukur risiko kepunahan global berdasarkan data populasi & tren</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Status CITES Appendix</strong></td>
+                    <td>Konvensi internasional (175+ negara)</td>
+                    <td>Mengikat lintas negara</td>
+                    <td>Mengatur izin lintas batas (ekspor-impor-re-ekspor)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="info-box">
+              <p>
+                <em>Ketiga status ini tidak selalu sejalan. Sebuah spesies bisa saja "tidak dilindungi" UU Indonesia 
+                tapi masuk Appendix II CITES, atau sebaliknya — dilindungi penuh UU RI namun IUCN-nya hanya 
+                "Vulnerable", bukan "Critically Endangered".</em>
+              </p>
             </div>
           </div>
         </section>
 
-        {/* Modal Popup */}
-        {selectedAnimal && (
-          <WildlifeModal 
-            animal={selectedAnimal} 
-            onClose={() => setSelectedAnimal(null)} 
-          />
-        )}
+        {/* Legal Basis */}
+        <section className="wp-legal section-padding">
+          <div className="container">
+            <h2 className="section-title">Dasar Hukum Nasional</h2>
+            <p className="section-description">
+              Perlindungan satwa liar di Indonesia bersumber dari beberapa peraturan perundang-undangan berikut:
+            </p>
+            
+            <div className="legal-list">
+              <motion.div 
+                className="legal-item"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <div className="legal-number">1</div>
+                <div className="legal-content">
+                  <h3>Undang-Undang Nomor 5 Tahun 1990</h3>
+                  <p>Tentang Konservasi Sumber Daya Alam Hayati dan Ekosistemnya — dasar hukum tertinggi yang membagi satwa menjadi dilindungi dan tidak dilindungi.</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="legal-item"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <div className="legal-number">2</div>
+                <div className="legal-content">
+                  <h3>Peraturan Pemerintah Nomor 7 Tahun 1999</h3>
+                  <p>Tentang Pengawetan Jenis Tumbuhan dan Satwa — memuat daftar resmi spesies dilindungi, diperbarui melalui Peraturan Menteri LHK Nomor P.106 Tahun 2018.</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="legal-item"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <div className="legal-number">3</div>
+                <div className="legal-content">
+                  <h3>Peraturan Pemerintah Nomor 8 Tahun 1999</h3>
+                  <p>Tentang Pemanfaatan Jenis Tumbuhan dan Satwa Liar — mengatur pemanfaatan spesies tidak dilindungi.</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                className="legal-item"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <div className="legal-number">4</div>
+                <div className="legal-content">
+                  <h3>Peraturan Menteri Perdagangan Nomor 122 Tahun 2018</h3>
+                  <p>Secara spesifik mengatur ekspor tumbuhan dan satwa liar yang tidak dilindungi namun masuk daftar CITES.</p>
+                </div>
+              </motion.div>
+            </div>
+
+            <div className="critical-note">
+              <p>
+                <strong>Poin krusial:</strong> kelima kelompok satwa yang menjadi fokus — gajah, harimau, badak, orangutan, 
+                serta sebagian besar jenis burung dan herpetofauna ikonik Indonesia — berstatus <strong>dilindungi penuh</strong> oleh undang-undang. 
+                Konsekuensinya, satwa-satwa ini tidak termasuk dalam daftar Permendag 122/2018 dan sama sekali tidak boleh diperdagangkan.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Categories Navigation */}
+        <section className="wp-categories section-padding bg-light">
+          <div className="container">
+            <h2 className="section-title">Jelajahi Status Perlindungan Satwa</h2>
+            <p className="section-description">
+              Pilih kategori satwa untuk melihat informasi detail tentang status perlindungan, konservasi, dan regulasi
+            </p>
+            
+            <div className="categories-grid">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <Link to="/wildlife-protection/mamalia" className="category-card mamalia">
+                  <div className="category-icon">
+                    <FaPaw />
+                  </div>
+                  <h3>Mamalia</h3>
+                  <p>Gajah Sumatera, Harimau, Badak, Orangutan, Beruang Madu, dan mamalia besar lainnya</p>
+                  <span className="category-link">Lihat Detail →</span>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <Link to="/wildlife-protection/aves" className="category-card aves">
+                  <div className="category-icon">
+                    <FaBird />
+                  </div>
+                  <h3>Aves (Burung)</h3>
+                  <p>Elang Jawa, Jalak Bali, Cendrawasih, Kakatua, dan berbagai spesies burung endemik</p>
+                  <span className="category-link">Lihat Detail →</span>
+                </Link>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <Link to="/wildlife-protection/herpetofauna" className="category-card herpetofauna">
+                  <div className="category-icon">
+                    <FaDragon />
+                  </div>
+                  <h3>Herpetofauna</h3>
+                  <p>Komodo, Penyu, Buaya, Ular Sanca, Biawak, dan reptil serta amfibi Indonesia</p>
+                  <span className="category-link">Lihat Detail →</span>
+                </Link>
+              </motion.div>
+            </div>
+          </div>
+        </section>
 
         <Footer />
       </div>
