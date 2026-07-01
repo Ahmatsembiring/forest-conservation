@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { FaBars, FaTimes, FaTree } from 'react-icons/fa'
 import './Navbar.css'
 
@@ -11,26 +11,24 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100) // Muncul setelah scroll 100px
+      setIsScrolled(window.scrollY > 100)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   useEffect(() => {
-    setIsMobileMenuOpen(false)
+    setIsMobileMenuOpen(false) // Tutup menu saat pindah halaman
   }, [location])
 
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    // { name: 'Projects', path: '/projects' },
-     { name: 'Wildlife', path: '/wildlife-protection' },
+    { name: 'Wildlife', path: '/wildlife-protection' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Blog', path: '/blog' },
   ]
 
-  // Cek apakah sedang di halaman home
   const isHomePage = location.pathname === '/'
 
   return (
@@ -50,18 +48,34 @@ const Navbar = () => {
           {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
         </div>
 
-        <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
-          {navLinks.map((link, index) => (
-            <li key={index}>
-              <Link 
-                to={link.path}
-                className={location.pathname === link.path ? 'active' : ''}
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.ul 
+              className="nav-links active"
+              initial={{ opacity: 0, x: 100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 100 }}
+              transition={{ duration: 0.3 }}
+            >
+              {navLinks.map((link, index) => (
+                <motion.li 
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Link 
+                    to={link.path}
+                    className={location.pathname === link.path ? 'active' : ''}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.li>
+              ))}
+            </motion.ul>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   )

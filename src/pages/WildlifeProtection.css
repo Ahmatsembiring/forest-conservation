@@ -505,3 +505,103 @@ tbody tr:nth-child(even) {
     gap: 20px;
   }
 }
+/* Tambahkan di akhir file */
+
+@media (max-width: 768px) {
+  .wp-hero {
+    padding: 120px 0 60px;
+    min-height: auto;
+  }
+
+  .wp-hero h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem !important;
+  }
+
+  .hero-tags {
+    font-size: 0.9rem;
+  }
+
+  .hero-description {
+    font-size: 1rem !important;
+  }
+
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .category-card {
+    padding: 30px 20px;
+  }
+
+  .category-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  .category-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .category-card p {
+    font-size: 0.95rem;
+  }
+
+  .legal-item {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .legal-number {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  th, td {
+    padding: 12px 10px;
+    font-size: 0.85rem;
+  }
+
+  .intro-text {
+    font-size: 1rem;
+    padding: 0;
+  }
+
+  .intro-highlight {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wp-hero h1 {
+    font-size: 1.5rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem !important;
+  }
+
+  .section-title {
+    font-size: 1.5rem !important;
+  }
+
+  .category-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+}
