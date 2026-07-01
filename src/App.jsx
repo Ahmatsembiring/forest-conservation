@@ -4,6 +4,7 @@ import About from './pages/About'
 import Projects from './pages/Projects'
 import Gallery from './pages/Gallery'
 import Blog from './pages/Blog'
+import WildlifeProtection from './pages/WildlifeProtection'  // ← Path ini harus sesuai
 import './App.css'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/wildlife-protection" element={<WildlifeProtection />} />  // ← Tambah ini
       </Routes>
     </Router>
   )

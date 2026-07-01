@@ -86,7 +86,7 @@
 }
 
 .hero-title {
-  font-size: 5rem;
+  font-size: clamp(2rem, 6vw, 5rem);
   font-weight: 700;
   margin-bottom: 25px;
   line-height: 1.1;
@@ -97,7 +97,7 @@
 .hero-title .highlight {
   color: var(--light-green);
   display: block;
-  font-size: 5.5rem;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
   font-weight: 800;
   background: linear-gradient(135deg, #7cb342 0%, #8bc34a 100%);
   -webkit-background-clip: text;
@@ -106,7 +106,7 @@
 }
 
 .hero-description {
-  font-size: 1.15rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
   line-height: 1.9;
   margin-bottom: 40px;
   opacity: 0.95;
@@ -124,7 +124,7 @@
   color: var(--white);
   border: none;
   border-radius: 50px;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
@@ -144,7 +144,7 @@
 }
 
 .stat-item h3 {
-  font-size: 3.5rem;
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
   font-weight: 700;
   color: var(--light-green);
   margin-bottom: 8px;
@@ -152,7 +152,7 @@
 }
 
 .stat-item p {
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
   opacity: 0.9;
   font-weight: 400;
   letter-spacing: 0.5px;
@@ -262,14 +262,6 @@
     padding: 0 40px;
   }
 
-  .hero-title {
-    font-size: 4rem;
-  }
-
-  .hero-title .highlight {
-    font-size: 4.5rem;
-  }
-
   .gallery-strip {
     right: 80px;
   }
@@ -316,12 +308,7 @@
   }
 
   .hero-title {
-    font-size: 3rem;
     text-align: center;
-  }
-
-  .hero-title .highlight {
-    font-size: 3.5rem;
   }
 
   .hero-description {
@@ -364,18 +351,6 @@
 }
 
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-title .highlight {
-    font-size: 3rem;
-  }
-
-  .hero-description {
-    font-size: 1rem;
-  }
-
   .gallery-photo {
     width: 80px;
     height: 80px;
@@ -383,10 +358,6 @@
 
   .gallery-strip {
     gap: 10px;
-  }
-
-  .stat-item h3 {
-    font-size: 2.5rem;
   }
 
   .social-icon {
@@ -397,21 +368,8 @@
 }
 
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-title .highlight {
-    font-size: 2.5rem;
-  }
-
-  .hero-description {
-    font-size: 0.95rem;
-  }
-
   .btn-primary {
     padding: 18px 40px;
-    font-size: 0.9rem;
   }
 
   .gallery-photo {
