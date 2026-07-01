@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { FaPaw, FaBird, FaDragon } from 'react-icons/fa'
+import { FaPaw, FaCrow, FaDragon } from 'react-icons/fa'  // ← Ganti FaBird dengan FaCrow
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import './WildlifeProtection.css'

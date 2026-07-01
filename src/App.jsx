@@ -4,7 +4,10 @@ import About from './pages/About'
 import Projects from './pages/Projects'
 import Gallery from './pages/Gallery'
 import Blog from './pages/Blog'
-import WildlifeProtection from './pages/WildlifeProtection'  // ← Path ini harus sesuai
+import WildlifeProtection from './pages/WildlifeProtection'
+import Mamalia from './pages/Mamalia'
+import Aves from './pages/Aves'
+import Herpetofauna from './pages/Herpetofauna'
 import './App.css'
 
 function App() {
@@ -16,7 +19,10 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/wildlife-protection" element={<WildlifeProtection />} />  // ← Tambah ini
+        <Route path="/wildlife-protection" element={<WildlifeProtection />} />
+        <Route path="/wildlife-protection/mamalia" element={<Mamalia />} />
+        <Route path="/wildlife-protection/aves" element={<Aves />} />
+        <Route path="/wildlife-protection/herpetofauna" element={<Herpetofauna />} />
       </Routes>
     </Router>
   )
