@@ -1,49 +1,74 @@
 .category-hero {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-  color: var(--white);
-  padding: 120px 0 80px;
-  text-align: center;
   position: relative;
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(56, 142, 60, 0.9), rgba(76, 175, 80, 0.85)),
+    url('https://images.unsplash.com/photo-1516934024742-b461fba47600?w=1920&q=80') center/cover;
+  color: var(--white);
+  text-align: center;
+  overflow: hidden;
 }
 
 .back-link {
+  position: absolute;
+  top: 30px;
+  left: 30px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   color: var(--white);
   text-decoration: none;
-  margin-bottom: 20px;
-  font-weight: 500;
+  padding: 12px 25px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  font-weight: 600;
   transition: all 0.3s;
+  z-index: 10;
 }
 
 .back-link:hover {
+  background: rgba(255, 255, 255, 0.3);
   gap: 15px;
-  color: var(--light-green);
+  transform: translateX(-5px);
 }
 
 .category-hero h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 15px;
-  font-weight: 700;
+  font-weight: 800;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .category-hero p {
-  font-size: 1.2rem;
-  opacity: 0.9;
+  font-size: 1.3rem;
+  opacity: 0.95;
 }
 
 .category-content {
   min-height: 60vh;
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8faf8 0%, #f1f8f4 100%);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .category-hero {
-    padding: 100px 0 60px;
+    height: 60vh;
+    min-height: 400px;
+    padding: 100px 20px 60px;
   }
 
   .category-hero h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+  }
+
+  .back-link {
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }
