@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { FaPaw, FaCrow, FaDragon } from 'react-icons/fa'  // ← Ganti FaBird dengan FaCrow
+import { FaPaw, FaCrow, FaDragon } from 'react-icons/fa'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import './WildlifeProtection.css'
@@ -243,7 +243,7 @@ const WildlifeProtection = () => {
               >
                 <Link to="/wildlife-protection/aves" className="category-card aves">
                   <div className="category-icon">
-                    <FaBird />
+                    <FaCrow />  {/* ← PERBAIKAN: Ganti FaBird dengan FaCrow */}
                   </div>
                   <h3>Aves (Burung)</h3>
                   <p>Elang Jawa, Jalak Bali, Cendrawasih, Kakatua, dan berbagai spesies burung endemik</p>
@@ -276,4 +276,4 @@ const WildlifeProtection = () => {
   )
 }
 
-export default WildlifeProtection
+export default WildlifeProtection 
