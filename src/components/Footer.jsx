@@ -43,7 +43,6 @@ const Footer = () => {
               <li><a href="/wildlife-protection">Wildlife Protection</a></li>
               <li><a href="/gallery">Gallery</a></li>
               <li><a href="/blog">Blog</a></li>
-              <li><a href="#">Get Involved</a></li>
             </ul>
           </motion.div>
 

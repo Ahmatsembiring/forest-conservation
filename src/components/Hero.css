@@ -226,35 +226,6 @@
   transform: translateX(5px);
 }
 
-/* Slider Indicators */
-.slider-indicators {
-  position: absolute;
-  bottom: 60px;
-  left: 60px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  color: var(--white);
-}
-
-.indicator {
-  font-size: 1rem;
-  font-weight: 500;
-  opacity: 0.5;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-
-.indicator.active {
-  opacity: 1;
-  font-weight: 700;
-}
-
-.line {
-  width: 80px;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.3);
-}
 
 /* Responsive Design */
 @media (max-width: 1200px) {

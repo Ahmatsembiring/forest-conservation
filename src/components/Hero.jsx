@@ -117,14 +117,6 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* Slider Indicators */}
-          <div className="slider-indicators">
-            <span className="indicator active">01</span>
-            <span className="line"></span>
-            <span className="indicator">02</span>
-            <span className="indicator">03</span>
-            <span className="indicator">04</span>
-          </div>
         </div>
       </div>
     </section>
