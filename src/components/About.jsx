@@ -64,7 +64,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              Why Forest Conservation Matters
+              Protecting Indonesia’s Natural Heritage
             </motion.h3>
             <motion.p
               initial={{ opacity: 0, x: -50 }}
@@ -72,9 +72,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Forests are more than just trees. They are complex ecosystems that support life on Earth. 
-              From providing oxygen to regulating climate, from supporting biodiversity to sustaining 
-              human livelihoods, forests play an irreplaceable role in maintaining the health of our planet.
+              Website ini dibuat sebagai media edukasi untuk meningkatkan kesadaran masyarakat terhadap pentingnya perlindungan satwa liar di Indonesia. Sebagai salah satu negara dengan tingkat keanekaragaman hayati terbesar di dunia, Indonesia menjadi rumah bagi berbagai spesies ikonik seperti Sumatran Elephant, Sumatran Tiger, Sumatran Rhinoceros, dan Orangutan. Namun, keberadaan satwa-satwa tersebut kini semakin terancam akibat berbagai aktivitas manusia, seperti perburuan liar, perdagangan ilegal, dan kerusakan habitat
             </motion.p>
             <motion.p
               initial={{ opacity: 0, x: -50 }}
@@ -82,9 +80,7 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              However, deforestation and forest degradation continue at alarming rates. Every year, 
-              millions of hectares of forests are lost, threatening wildlife, disrupting water cycles, 
-              and accelerating climate change. The time to act is now.
+              Melalui platform ini, kami berkomitmen untuk menyajikan informasi mengenai status perlindungan satwa, regulasi hukum yang berlaku di Indonesia, berbagai ancaman terhadap satwa liar, serta upaya konservasi yang terus dilakukan. Dengan adanya website ini, kami berharap dapat mendorong lebih banyak masyarakat untuk peduli, berpartisipasi, dan bersama-sama menjaga kelestarian ekosistem Indonesia bagi generasi masa depan.
             </motion.p>
             <motion.button 
               className="btn-primary"

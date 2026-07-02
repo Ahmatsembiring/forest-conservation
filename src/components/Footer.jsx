@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
-import { FaTree, FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa'
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa'
 import './Footer.css'
+import logo from '../assets/images/logo.jpeg' // Import logo
 
 const Footer = () => {
   return (
@@ -14,8 +15,8 @@ const Footer = () => {
             viewport={{ once: true }}
           >
             <div className="footer-logo">
-              <FaTree className="logo-icon" />
-              <h2>GREENALE</h2>
+              <img src={logo} alt="BKHIT Logo" className="footer-logo-img" />
+              <h2>BKHIT</h2>
             </div>
             <p>
               Dedicated to preserving our forests for future generations. 
@@ -39,7 +40,7 @@ const Footer = () => {
             <h3>Quick Links</h3>
             <ul>
               <li><a href="/about">About Us</a></li>
-              <li><a href="/projects">Our Projects</a></li>
+              <li><a href="/wildlife-protection">Wildlife Protection</a></li>
               <li><a href="/gallery">Gallery</a></li>
               <li><a href="/blog">Blog</a></li>
               <li><a href="#">Get Involved</a></li>

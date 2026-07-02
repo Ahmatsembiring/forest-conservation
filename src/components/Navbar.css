@@ -41,9 +41,12 @@
   letter-spacing: 1px;
 }
 
-.logo-icon {
-  font-size: 2rem;
-  color: #7cb342 !important;
+/* GANTI .logo-icon DENGAN .logo-img */
+.logo-img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%; /* Hapus baris ini jika logomu berbentuk persegi */
 }
 
 .nav-links {
@@ -129,21 +132,6 @@
 }
 
 @media (max-width: 768px) {
-  .logo {
-    font-size: 1.3rem;
-  }
-
-  .logo-icon {
-    font-size: 1.6rem;
-  }
-
-  .nav-links a {
-    font-size: 1.2rem;
-  }
-}
-/* Update bagian responsive di Navbar.css */
-
-@media (max-width: 768px) {
   .hamburger {
     display: block;
     z-index: 1001;
@@ -185,8 +173,10 @@
     font-size: 1.3rem;
   }
 
-  .logo-icon {
-    font-size: 1.6rem;
+  /* Update ukuran logo untuk tablet */
+  .logo-img {
+    width: 38px;
+    height: 38px;
   }
 }
 
@@ -199,8 +189,10 @@
     font-size: 1.1rem;
   }
 
-  .logo-icon {
-    font-size: 1.4rem;
+  /* Update ukuran logo untuk HP kecil */
+  .logo-img {
+    width: 32px;
+    height: 32px;
   }
 
   .nav-links a {

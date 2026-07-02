@@ -20,17 +20,22 @@
 .footer-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 20px;
 }
 
-.footer-logo .logo-icon {
-  font-size: 2.5rem;
-  color: var(--accent-color);
+/* GANTI .footer-logo .logo-icon DENGAN .footer-logo-img */
+.footer-logo-img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 50%; /* Hapus baris ini jika tidak ingin logo bulat */
 }
 
 .footer-logo h2 {
   font-size: 1.8rem;
+  color: var(--white);
+  margin: 0;
 }
 
 .footer-section p {
@@ -150,5 +155,26 @@
   .footer-content {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+
+  /* Responsive untuk logo di footer */
+  .footer-logo-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .footer-logo h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer-logo h2 {
+    font-size: 1.3rem;
   }
 }

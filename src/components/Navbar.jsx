@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
-import { FaBars, FaTimes, FaTree } from 'react-icons/fa'
+import { motion } from 'framer-motion'
+import { FaBars, FaTimes } from 'react-icons/fa' // FaTree dihapus karena tidak dipakai lagi
 import './Navbar.css'
+import logo from '../assets/images/logo.jpeg' // Pastikan path ini sesuai dengan lokasi file logo Anda
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -11,14 +12,14 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100)
+      setIsScrolled(window.scrollY > 100) // Muncul setelah scroll 100px
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   useEffect(() => {
-    setIsMobileMenuOpen(false) // Tutup menu saat pindah halaman
+    setIsMobileMenuOpen(false)
   }, [location])
 
   const navLinks = [
@@ -29,6 +30,7 @@ const Navbar = () => {
     { name: 'Blog', path: '/blog' },
   ]
 
+  // Cek apakah sedang di halaman home
   const isHomePage = location.pathname === '/'
 
   return (
@@ -40,42 +42,27 @@ const Navbar = () => {
     >
       <div className="navbar-container">
         <Link to="/" className="logo">
-          <FaTree className="logo-icon" />
-          <span>GREENALE</span>
+          {/* GANTI BAGIAN INI */}
+          <img src={logo} alt="BKHIT Logo" className="logo-img" />
+          <span>BKHIT</span>
         </Link>
 
         <div className="hamburger" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
           {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
         </div>
 
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.ul 
-              className="nav-links active"
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 100 }}
-              transition={{ duration: 0.3 }}
-            >
-              {navLinks.map((link, index) => (
-                <motion.li 
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <Link 
-                    to={link.path}
-                    className={location.pathname === link.path ? 'active' : ''}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                </motion.li>
-              ))}
-            </motion.ul>
-          )}
-        </AnimatePresence>
+        <ul className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
+          {navLinks.map((link, index) => (
+            <li key={index}>
+              <Link 
+                to={link.path}
+                className={location.pathname === link.path ? 'active' : ''}
+              >
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </motion.nav>
   )
