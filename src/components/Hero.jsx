@@ -61,9 +61,8 @@ const Hero = () => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              Forests are the lungs of the earth; essential for environmental stability 
-              and human health and happiness. These magnificent and ancient ecosystems 
-              are home to 50 percent of all terrestrial species on Earth.
+              Indonesia is home to rare wildlife like the Sumatran Tiger, Elephant, 
+              Rhino, and Orangutan. Protecting them means protecting our future.
             </motion.p>
 
             
