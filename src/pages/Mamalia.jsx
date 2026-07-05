@@ -77,7 +77,7 @@ const Mamalia = () => {
             >
               Mamalia Kunci Indonesia
             </motion.h1>
-            <p>Gajah • Harimau • Badak • Orangutan • Beruang • Tapir</p>
+            <p>Gajah • Harimau • Badak • Orangutan • Beruang • Ta</p>
           </div>
         </section>
 

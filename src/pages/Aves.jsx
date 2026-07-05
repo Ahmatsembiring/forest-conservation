@@ -6,7 +6,10 @@ import WildlifeCard, { WildlifeModal } from '../components/WildlifeCard'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import './Aves.css'
-
+import elang from '../assets/images/elang.jpg'
+import jalak from '../assets/images/jalak.webp'
+import cendrawasih from '../assets/images/cendrawasih.jpeg'
+impoet kakaktua '../assets/images/kakaktua.jpg'
 const Aves = () => {
   const [selectedAnimal, setSelectedAnimal] = useState(null)
 
@@ -15,27 +18,27 @@ const Aves = () => {
       id: 1,
       name: 'Elang Jawa',
       scientificName: 'Nisaetus bartelsi',
-      image: 'https://images.unsplash.com/photo-1611004218472-1632f54cb68e?w=800&q=80',
+      image: elang,
       legalStatus: 'Dilindungi penuh',
       iucnStatus: 'Endangered (EN)',
       citesStatus: 'Appendix II',
       description: 'Elang Jawa adalah burung endemik Indonesia yang menjadi simbol negara (Garuda). Populasi diperkirakan kurang dari 1.000 individu dewasa. Ancaman utama adalah hilangnya habitat dan perdagangan ilegal.',
-      reference: 'https://www.iucnredlist.org/species/22696052/131796079'
+      reference: 'https://www.betahita.id/sorot/4335/burung-elang-jawa-masih-hidup-di-gunung-patuha '
     },
     {
       id: 2,
       name: 'Jalak Bali',
       scientificName: 'Leucopsar rothschildi',
-      image: 'https://images.unsplash.com/photo-1552728427-864c919c51f3?w=800&q=80',
+      image: jalak,
       legalStatus: 'Dilindungi penuh',
       iucnStatus: 'Critically Endangered (CR)',
       citesStatus: 'Appendix I',
       description: 'Jalak Bali adalah burung endemik Bali yang menjadi maskot provinsi. Populasi liar kurang dari 50 individu. Perdagangan ilegal untuk burung kicau menjadi ancaman utama.',
-      reference: 'https://www.iucnredlist.org/species/22710688/131796079'
+      reference: ' https://www.indonesia.travel/id/id/destination/bali-nusa-tenggara/bali/jalak-bali'
     },
     {
       id: 3,
-      name: 'Kakatua Jambul Kuning',
+      name: 'Kakatua',
       scientificName: 'Cacatua sulphurea',
       image: 'https://images.unsplash.com/photo-1550853024-feef1f4f6a7c?w=800&q=80',
       legalStatus: 'Dilindungi penuh',
@@ -48,12 +51,13 @@ const Aves = () => {
       id: 4,
       name: 'Cendrawasih',
       scientificName: 'Paradisaeidae',
-      image: 'https://images.unsplash.com/photo-1551009175-8a68da93d5f9?w=800&q=80',
+      image: cendrawasih,
       legalStatus: 'Dilindungi penuh',
       iucnStatus: 'Near Threatened - Vulnerable',
       citesStatus: 'Appendix II',
       description: 'Cendrawasih adalah burung endemik Papua yang terkenal dengan keindahan bulunya. Berbagai spesies cendrawasih dilindungi karena perburuan untuk bulu dan perdagangan.',
-      reference: 'https://www.iucnredlist.org'
+      reference: ' https://ppid.jayapurakab.go.id/melihat-dari-dekat-cenderawasih-kebanggaan-papua/'
+
     },
     {
       id: 5,

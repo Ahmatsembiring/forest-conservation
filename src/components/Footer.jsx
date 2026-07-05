@@ -73,15 +73,25 @@ const Footer = () => {
           
         </div>
 
-        <motion.div 
-          className="footer-bottom"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          <p>&copy; 2026 Greenale - Forest Conservation. All rights reserved.</p>
-          <p>Made with ❤️ for our planet</p>
-        </motion.div>
+        <motion.div
+  className="footer-bottom"
+  initial={{ opacity: 0 }}
+  whileInView={{ opacity: 1 }}
+  transition={{ duration: 0.8 }}
+  viewport={{ once: true }}
+>
+  <p>
+    © 2026 <strong>Greenale – Forest Conservation</strong>. All rights reserved.
+  </p>
+
+  <p className="footer-credit">
+    Developed by <strong>Tim PKL ITERA – Rekayasa Kehutanan 2026</strong>
+  </p>
+
+  <p className="footer-tagline">
+    🌿 Protecting Nature Through Technology • Made with ❤️ for Our Planet
+  </p>
+</motion.div>
       </div>
     </footer>
   )

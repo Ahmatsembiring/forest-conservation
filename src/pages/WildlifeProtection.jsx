@@ -230,7 +230,7 @@ const WildlifeProtection = () => {
                     <FaPaw />
                   </div>
                   <h3>Mamalia</h3>
-                  <p>Gajah Sumatera, Harimau, Badak, Orangutan, Beruang Madu, dan mamalia besar lainnya</p>
+                  <p>Gajah Sumatera, Harimau, Badak, Orangutan dan mamalia besar lainnya</p>
                   <span className="category-link">Lihat Detail →</span>
                 </Link>
               </motion.div>
