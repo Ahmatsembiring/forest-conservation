@@ -9,7 +9,9 @@ import './Aves.css'
 import elang from '../assets/images/elang.jpg'
 import jalak from '../assets/images/jalak.webp'
 import cendrawasih from '../assets/images/cendrawasih.jpeg'
-impoet kakaktua '../assets/images/kakaktua.jpg'
+import kakaktua from '../assets/images/kakaktua.jpg'
+import kakaktuaputih from '../assets/images/kakaktuaputih.jpg'
+import nurinuri from '../assets/images/nuri.webp'
 const Aves = () => {
   const [selectedAnimal, setSelectedAnimal] = useState(null)
 
@@ -38,9 +40,9 @@ const Aves = () => {
     },
     {
       id: 3,
-      name: 'Kakatua',
+      name: 'kakatua',
       scientificName: 'Cacatua sulphurea',
-      image: 'https://images.unsplash.com/photo-1550853024-feef1f4f6a7c?w=800&q=80',
+      image: kakaktua,
       legalStatus: 'Dilindungi penuh',
       iucnStatus: 'Critically Endangered (CR)',
       citesStatus: 'Appendix I',
@@ -63,23 +65,23 @@ const Aves = () => {
       id: 5,
       name: 'Kakatua Putih',
       scientificName: 'Cacatua alba',
-      image: 'https://images.unsplash.com/photo-1552728427-864c919c51f3?w=800&q=80',
+      image: kakaktuaputih,
       legalStatus: 'Tidak dilindungi (diatur)',
       iucnStatus: 'Vulnerable (VU)',
       citesStatus: 'Appendix II',
       description: 'Kakatua Putih tidak dilindungi secara nasional namun diatur dalam CITES Appendix II. Ekspor diperbolehkan dengan kuota dan izin PE-TASL sesuai Permendag 122/2018.',
-      reference: 'https://www.iucnredlist.org/species/22684637/131796079'
+      reference: ' https://ebird.org/species/whicoc1?siteLanguage=in'
     },
     {
       id: 6,
-      name: 'Nuri-nuri',
+      name: 'Nuri',
       scientificName: 'Loriinae',
-      image: 'https://images.unsplash.com/photo-1552728427-864c919c51f3?w=800&q=80',
+      image: nurinuri,
       legalStatus: 'Tidak dilindungi (diatur)',
       iucnStatus: 'Least Concern - Near Threatened',
       citesStatus: 'Appendix II',
       description: 'Berbagai jenis nuri dan parkit Indonesia tidak dilindungi namun masuk CITES Appendix II. Perdagangan diatur dengan sistem kuota dan izin PE-TASL.',
-      reference: 'https://www.iucnredlist.org'
+      reference: 'https://m.kumparan.com/seputar-hobi/ragam-perbedaan-nuri-kepala-hitam-jantan-dan-betina-yang-mencolok-21xVFsFexhq'
     }
   ]
 
