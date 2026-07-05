@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { FaArrowLeft } from 'react-icons/fa'
+import { FaArrowLeft, FaTimes } from 'react-icons/fa'
 import WildlifeCard, { WildlifeModal } from '../components/WildlifeCard'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -12,6 +12,7 @@ import cendrawasih from '../assets/images/cendrawasih.jpeg'
 import kakaktua from '../assets/images/kakaktua.jpg'
 import kakaktuaputih from '../assets/images/kakaktuaputih.jpg'
 import nurinuri from '../assets/images/nuri.webp'
+
 const Aves = () => {
   const [selectedAnimal, setSelectedAnimal] = useState(null)
 
@@ -25,7 +26,7 @@ const Aves = () => {
       iucnStatus: 'Endangered (EN)',
       citesStatus: 'Appendix II',
       description: 'Elang Jawa adalah burung endemik Indonesia yang menjadi simbol negara (Garuda). Populasi diperkirakan kurang dari 1.000 individu dewasa. Ancaman utama adalah hilangnya habitat dan perdagangan ilegal.',
-      reference: 'https://www.betahita.id/sorot/4335/burung-elang-jawa-masih-hidup-di-gunung-patuha '
+      reference: 'https://www.betahita.id/sorot/4335/burung-elang-jawa-masih-hidup-di-gunung-patuha'
     },
     {
       id: 2,
@@ -36,11 +37,11 @@ const Aves = () => {
       iucnStatus: 'Critically Endangered (CR)',
       citesStatus: 'Appendix I',
       description: 'Jalak Bali adalah burung endemik Bali yang menjadi maskot provinsi. Populasi liar kurang dari 50 individu. Perdagangan ilegal untuk burung kicau menjadi ancaman utama.',
-      reference: ' https://www.indonesia.travel/id/id/destination/bali-nusa-tenggara/bali/jalak-bali'
+      reference: 'https://www.indonesia.travel/id/id/destination/bali-nusa-tenggara/bali/jalak-bali'
     },
     {
       id: 3,
-      name: 'kakatua',
+      name: 'Kakatua',
       scientificName: 'Cacatua sulphurea',
       image: kakaktua,
       legalStatus: 'Dilindungi penuh',
@@ -58,8 +59,7 @@ const Aves = () => {
       iucnStatus: 'Near Threatened - Vulnerable',
       citesStatus: 'Appendix II',
       description: 'Cendrawasih adalah burung endemik Papua yang terkenal dengan keindahan bulunya. Berbagai spesies cendrawasih dilindungi karena perburuan untuk bulu dan perdagangan.',
-      reference: ' https://ppid.jayapurakab.go.id/melihat-dari-dekat-cenderawasih-kebanggaan-papua/'
-
+      reference: 'https://ppid.jayapurakab.go.id/melihat-dari-dekat-cenderawasih-kebanggaan-papua/'
     },
     {
       id: 5,
@@ -70,7 +70,7 @@ const Aves = () => {
       iucnStatus: 'Vulnerable (VU)',
       citesStatus: 'Appendix II',
       description: 'Kakatua Putih tidak dilindungi secara nasional namun diatur dalam CITES Appendix II. Ekspor diperbolehkan dengan kuota dan izin PE-TASL sesuai Permendag 122/2018.',
-      reference: ' https://ebird.org/species/whicoc1?siteLanguage=in'
+      reference: 'https://ebird.org/species/whicoc1?siteLanguage=in'
     },
     {
       id: 6,
