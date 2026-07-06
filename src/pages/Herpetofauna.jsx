@@ -7,6 +7,8 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import './Herpetofauna.css'
 import komodo from '../assets/images/komodo.webp'
+import Penyu from '../assets/images/Penyu.jpg'
+import penyusisik from '../assets/images/penyu-sisik.jpg'
 
 
 
@@ -29,23 +31,23 @@ const Herpetofauna = () => {
       id: 2,
       name: 'Penyu Hijau',
       scientificName: 'Chelonia mydas',
-      image: 'https://images.unsplash.com/photo-1437622368342-7a3d73180219?w=800&q=80',
+      image: Penyu,
       legalStatus: 'Dilindungi penuh',
       iucnStatus: 'Endangered (EN)',
       citesStatus: 'Appendix I',
       description: 'Penyu Hijau adalah spesies penyu yang banyak ditemukan di perairan Indonesia. Ancaman utama meliputi perburuan untuk daging dan telur, kerusakan habitat peneluran, dan tangkapan sampingan dari aktivitas perikanan.',
-      reference: 'https://www.iucnredlist.org/species/4615/11037468'
+      reference: ' https://1001indonesia.net/penyu-hijau-terancam-punah-akibat-perburuan-liar-dan-kerusakan-habitat/'
     },
     {
       id: 3,
       name: 'Penyu Sisik',
       scientificName: 'Eretmochelys imbricata',
-      image: 'https://images.unsplash.com/photo-1437622368342-7a3d73180219?w=800&q=80',
+      image: penyusisik,
       legalStatus: 'Dilindungi penuh',
       iucnStatus: 'Critically Endangered (CR)',
       citesStatus: 'Appendix I',
       description: 'Penyu Sisik adalah spesies penyu yang paling terancam di antara semua penyu laut. Diperdagangkan secara ilegal untuk cangkangnya yang digunakan sebagai perhiasan dan kerajinan.',
-      reference: 'https://www.iucnredlist.org/species/8005/11037468'
+      reference: 'https://www.temanaotemoana.org/en/did-you-know-2/'
     },
     {
       id: 4,
