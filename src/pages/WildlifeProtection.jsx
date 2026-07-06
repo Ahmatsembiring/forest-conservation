@@ -1,15 +1,12 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-// Hapus import FaPaw, FaCrow, FaDragon jika tidak digunakan di tempat lain
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import './WildlifeProtection.css'
 import gajah from '../assets/images/gajah.jpg'
 import Penyu from '../assets/images/Penyu.jpg'
 import kakaktua from '../assets/images/kakaktua.jpg'
-
-
 
 const WildlifeProtection = () => {
   return (
@@ -233,7 +230,7 @@ const WildlifeProtection = () => {
                 <Link to="/wildlife-protection/mamalia" className="category-card mamalia">
                   <div className="category-image">
                     <img 
-                      src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?w=400&h=400&fit=crop" 
+                      src={gajah} 
                       alt="Mamalia Indonesia" 
                     />
                   </div>
@@ -252,7 +249,7 @@ const WildlifeProtection = () => {
                 <Link to="/wildlife-protection/aves" className="category-card aves">
                   <div className="category-image">
                     <img 
-                      src="https://images.unsplash.com/photo-1611046441874-4a54becc69f9?w=400&h=400&fit=crop" 
+                      src={kakaktua} 
                       alt="Burung Indonesia" 
                     />
                   </div>
@@ -271,7 +268,7 @@ const WildlifeProtection = () => {
                 <Link to="/wildlife-protection/herpetofauna" className="category-card herpetofauna">
                   <div className="category-image">
                     <img 
-                      src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=400&h=400&fit=crop" 
+                      src={Penyu} 
                       alt="Herpetofauna Indonesia" 
                     />
                   </div>
