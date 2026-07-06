@@ -11,6 +11,8 @@ import harimau from '../assets/images/Harimau.jpg' // Import gambar harimau
 import badaak from '../assets/images/badak.jpg' // Import gambar badak
 import orangutan from '../assets/images/orangutan.webp' 
 import Tringgiling from '../assets/images/Tringgiling.jpg'
+import tapir from '../assets/images/tapir.jpeg'
+import beruang from '../assets/images/Beruang.jpg'
 // Import gambar orangutan
 
 const Mamalia = () => {
@@ -71,6 +73,28 @@ const Mamalia = () => {
       citesStatus: 'Appendix I',
       description: 'Trenggiling Sunda adalah hewan yang hampir punah. Diperkirakan tersisa kurang dari 500 individu. Ancaman utama adalah habitat yang hilang dan perburuan liar.',
       reference: 'https://animalium.id/2022/12/08/si-manis-dari-jawa-yang-rawan-diburu/'
+    },
+    {
+      id: 6,
+      name: 'Tapir Asia ',
+      scientificName: 'Tapirus indicus',
+      image:tapir,
+      legalStatus: 'Dilindungi penuh',
+      iucnStatus: 'Critically Endangered (CR)',
+      citesStatus: 'Appendix I',
+      description: 'Tapir Asia adalah satu-satunya spesies tapir yang hidup di luar benua Amerika, dan merupakan mamalia berkuku ganjil terbesar di Sumatera setelah badak. Tapir berperan penting sebagai penyebar biji (seed disperser) bagi regenerasi hutan tropis. Ancaman utamanya adalah hilangnya hutan dataran rendah akibat konversi lahan, di samping perburuan untuk daging dan bagian tubuh tertentu.',
+      reference: ' https://www.edgeofexistence.org/blog/its-world-tapir-day-wait-whats-a-tapir/'
+    },
+    {
+      id: 7,
+      name: 'Beruang Madu ',
+      scientificName: 'Helarctos malayanus',
+      image:beruang,
+      legalStatus: 'Dilindungi penuh',
+      iucnStatus: 'Critically Endangered (CR)',
+      citesStatus: 'Appendix I',
+      description: 'Beruang Madu adalah spesies beruang terkecil di dunia dan satu-satunya beruang asli Indonesia, tersebar di hutan Sumatera dan Kalimantan',
+      reference: ' https://animalium.id/2023/02/23/beruang-madu-sebar-biji-regenerasi-hutan/'
     }
   ]
 
