@@ -9,7 +9,9 @@ import './Mamalia.css'
 import gajah from '../assets/images/gajah.jpg' // Import gambar gajah
 import harimau from '../assets/images/Harimau.jpg' // Import gambar harimau
 import badaak from '../assets/images/badak.jpg' // Import gambar badak
-import orangutan from '../assets/images/orangutan.webp' // Import gambar orangutan
+import orangutan from '../assets/images/orangutan.webp' 
+import Tringgiling from '../assets/images/Tringgiling.jpg'
+// Import gambar orangutan
 
 const Mamalia = () => {
   const [selectedAnimal, setSelectedAnimal] = useState(null)
@@ -58,6 +60,17 @@ const Mamalia = () => {
       citesStatus: 'Appendix I',
       description: 'Badak Sumatera adalah badak berambut terkecil di dunia. Diperkirakan tersisa kurang dari 80 individu. Permintaan cula badak di pasar gelap Asia tetap menjadi pendorong utama perburuan liar.',
       reference: 'https://badak.or.id/sumatran-rhino/'
+    },
+     {
+      id: 5,
+      name: 'Trenggiling Sunda ',
+      scientificName: 'Manis javanica',
+      image:Tringgiling,
+      legalStatus: 'Dilindungi penuh',
+      iucnStatus: 'Critically Endangered (CR)',
+      citesStatus: 'Appendix I',
+      description: 'Trenggiling Sunda adalah hewan yang hampir punah. Diperkirakan tersisa kurang dari 500 individu. Ancaman utama adalah habitat yang hilang dan perburuan liar.',
+      reference: 'https://animalium.id/2022/12/08/si-manis-dari-jawa-yang-rawan-diburu/'
     }
   ]
 
