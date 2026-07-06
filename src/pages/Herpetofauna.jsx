@@ -6,6 +6,9 @@ import WildlifeCard, { WildlifeModal } from '../components/WildlifeCard'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import './Herpetofauna.css'
+import komodo from '../assets/images/komodo.webp'
+
+
 
 const Herpetofauna = () => {
   const [selectedAnimal, setSelectedAnimal] = useState(null)
@@ -15,12 +18,12 @@ const Herpetofauna = () => {
       id: 1,
       name: 'Komodo',
       scientificName: 'Varanus komodoensis',
-      image: 'https://images.unsplash.com/photo-1516934024742-b461fba47600?w=800&q=80',
+      image: komodo,
       legalStatus: 'Dilindungi penuh',
       iucnStatus: 'Endangered (EN)',
       citesStatus: 'Appendix I',
       description: 'Komodo adalah reptil purba terbesar di dunia yang hanya ditemukan di Indonesia (Pulau Komodo, Rinca, dan sekitarnya). Populasi sekitar 1.500 individu dewasa. Status dilindungi penuh dan Appendix I CITES karena populasi yang sangat terbatas secara geografis.',
-      reference: 'https://www.iucnredlist.org/species/17823/119164893'
+      reference: 'https://www.indonesia.travel/id/id/travel-ideas/culture/komodo-dragons-the-majestic-giants-of-indonesia'
     },
     {
       id: 2,

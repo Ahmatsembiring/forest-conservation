@@ -13,6 +13,7 @@ import orangutan from '../assets/images/orangutan.webp'
 import Tringgiling from '../assets/images/Tringgiling.jpg'
 import tapir from '../assets/images/tapir.jpeg'
 import beruang from '../assets/images/Beruang.jpg'
+
 // Import gambar orangutan
 
 const Mamalia = () => {
@@ -97,7 +98,6 @@ const Mamalia = () => {
       reference: ' https://animalium.id/2023/02/23/beruang-madu-sebar-biji-regenerasi-hutan/'
     }
   ]
-
   return (
     <>
       <Navbar />
