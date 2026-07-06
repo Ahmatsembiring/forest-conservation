@@ -9,6 +9,11 @@ import './Herpetofauna.css'
 import komodo from '../assets/images/komodo.webp'
 import Penyu from '../assets/images/Penyu.jpg'
 import penyusisik from '../assets/images/penyu-sisik.jpg'
+import buaya from '../assets/images/buaya.jpg'
+import ular from '../assets/images/ular.png'
+import biawak from '../assets/images/biawak.jpg'
+import Tuntong from '../assets/images/Tuntong.jpg'
+
 
 
 
@@ -53,34 +58,45 @@ const Herpetofauna = () => {
       id: 4,
       name: 'Buaya Muara',
       scientificName: 'Crocodylus porosus',
-      image: 'https://images.unsplash.com/photo-1516934024742-b461fba47600?w=800&q=80',
+      image: buaya,
       legalStatus: 'Tidak dilindungi (kuota diatur)',
       iucnStatus: 'Least Concern (LC)',
       citesStatus: 'Appendix II',
       description: 'Buaya Muara tidak dilindungi secara nasional namun populasinya diatur kuota. Masuk CITES Appendix II untuk populasi Indonesia. Diperdagangkan untuk kulit dan daging.',
-      reference: 'https://www.iucnredlist.org/species/5668/100776776'
+      reference: ' https://sumatra.bisnis.com/read/20191208/533/1179122/buaya-muara-muncul-di-sungai-lematang-warga-diminta-waspada'
     },
     {
       id: 5,
       name: 'Ular Sanca',
       scientificName: 'Pythonidae',
-      image: 'https://images.unsplash.com/photo-1516934024742-b461fba47600?w=800&q=80',
+      image: ular,
       legalStatus: 'Tidak dilindungi (diatur)',
       iucnStatus: 'Least Concern',
       citesStatus: 'Appendix II',
       description: 'Berbagai jenis ular sanca (phyton) tidak dilindungi namun masuk CITES Appendix II. Diperdagangkan secara massal untuk industri kulit dan fashion. Volume perdagangan sangat tinggi.',
-      reference: 'https://www.iucnredlist.org'
+      reference: ' https://bobo.grid.id/read/08673983/inilah-7-fakta-ular-piton-yang-perlu-kamu-ketahui?page=all'
     },
     {
       id: 6,
       name: 'Biawak Air',
       scientificName: 'Varanus salvator',
-      image: 'https://images.unsplash.com/photo-1516934024742-b461fba47600?w=800&q=80',
+      image:biawak,
       legalStatus: 'Tidak dilindungi (diatur)',
       iucnStatus: 'Least Concern (LC)',
       citesStatus: 'Appendix II',
       description: 'Biawak Air tidak dilindungi namun masuk CITES Appendix II. Diperdagangkan untuk kulit dan daging. Indonesia adalah salah satu eksportir terbesar biawak dunia.',
-      reference: 'https://www.iucnredlist.org/species/21473/199704532'
+      reference: ' https://a-z-animals.com/animals/asian-water-monitor/'
+    },
+     {
+      id: 7,
+      name: 'Tuntong laut',
+      scientificName: 'Batagur borneoensis',
+      image:Tuntong,
+      legalStatus: 'Tidak dilindungi (diatur)',
+      iucnStatus: 'Least Concern (LC)',
+      citesStatus: 'Appendix II',
+      description: 'beluku adalah sejenis kura-kura yang ditemukan hidup di Thailand, Malaysia, Kalimantan dan Sumatra.Semula kura-kura ini dimasukkan ke dalam genus Callagur, tetapi kajian filogeni berdasarkan karakter DNA mitokondria yang dilakukan pada 2007 menunjukkan bahwa marga tersebut lebih tepat dilebur dalam genus Batagur.',
+      reference: ' https://id.wikipedia.org/wiki/Tuntong_laut'
     }
   ]
 
