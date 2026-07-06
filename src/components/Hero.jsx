@@ -2,13 +2,18 @@ import { motion } from 'framer-motion'
 import { FaFacebookF, FaTwitter, FaInstagram, FaArrowRight } from 'react-icons/fa'
 import './Hero.css'
 
+import berries from "../assets/images/komodo.webp";
+import orangutan from "../assets/images/kakaktua.jpg";
+import squirrel from "../assets/images/tapir.jpeg";
+import forest from "../assets/images/orangutan.webp";
+
 const Hero = () => {
   // Foto satwa dan alam untuk gallery strip
   const galleryPhotos = [
-    { id: 1, src: 'https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=400&q=80', alt: 'Red Berries' },
-    { id: 2, src: 'https://images.unsplash.com/photo-1535083783855-76ae62b2914e?w=400&q=80', alt: 'Orangutan' },
-    { id: 3, src: 'https://images.unsplash.com/photo-1516934024742-b461fba47600?w=400&q=80', alt: 'Squirrel' },
-    { id: 4, src: 'https://images.unsplash.com/photo-1484406566174-9da000fda645?w=400&q=80', alt: 'Forest' },
+    { id: 1, src: berries, alt: 'Red Berries' }, // Ganti URL dengan variabel berries
+    { id: 2, src: orangutan, alt: 'Orangutan' }, // Ganti URL dengan variabel orangutan
+    { id: 3, src: squirrel, alt: 'Squirrel' },   // Ganti URL dengan variabel squirrel
+    { id: 4, src: forest, alt: 'Forest' },       // Ganti URL dengan variabel forest
   ]
 
   return (
