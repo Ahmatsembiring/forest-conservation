@@ -1,4 +1,6 @@
-/* Hero Section dengan Background Image */
+/* ========================================
+   HERO SECTION
+======================================== */
 .wp-hero {
   position: relative;
   height: 90vh;
@@ -66,7 +68,9 @@
   line-height: 1.8;
 }
 
-/* Introduction Section */
+/* ========================================
+   INTRODUCTION SECTION
+======================================== */
 .wp-intro {
   background: linear-gradient(135deg, #f1f8f4 0%, #e8f5e9 100%);
   padding: 100px 0;
@@ -103,7 +107,9 @@
   line-height: 1.9;
 }
 
-/* Section Title */
+/* ========================================
+   SECTION TITLE & DESCRIPTION
+======================================== */
 .section-title {
   font-size: 2.8rem;
   color: var(--primary-color);
@@ -136,7 +142,9 @@
   line-height: 1.9;
 }
 
-/* Framework Table */
+/* ========================================
+   FRAMEWORK TABLE
+======================================== */
 .framework-table {
   margin: 50px 0;
   border-radius: 20px;
@@ -183,7 +191,9 @@ tbody tr:nth-child(even) {
   background: #fafcfa;
 }
 
-/* Info Box */
+/* ========================================
+   INFO BOX
+======================================== */
 .info-box {
   background: linear-gradient(135deg, rgba(124, 179, 66, 0.1) 0%, rgba(74, 124, 67, 0.1) 100%);
   border-left: 5px solid var(--accent-color);
@@ -201,7 +211,9 @@ tbody tr:nth-child(even) {
   font-style: italic;
 }
 
-/* Legal Section */
+/* ========================================
+   LEGAL SECTION
+======================================== */
 .legal-list {
   display: flex;
   flex-direction: column;
@@ -273,7 +285,9 @@ tbody tr:nth-child(even) {
   color: #a5d6a7;
 }
 
-/* Categories Grid */
+/* ========================================
+   CATEGORIES GRID (CARD DENGAN GAMBAR)
+======================================== */
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -284,7 +298,7 @@ tbody tr:nth-child(even) {
 .category-card {
   display: block;
   background: var(--white);
-  padding: 45px 35px;
+  padding: 35px 30px 40px;
   border-radius: 25px;
   text-align: center;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
@@ -328,40 +342,70 @@ tbody tr:nth-child(even) {
   transform: scaleX(1);
 }
 
-.category-icon {
-  width: 110px;
-  height: 110px;
+/* === CATEGORY IMAGE (PENGGANTI ICON) === */
+.category-image {
+  width: 180px;
+  height: 180px;
   margin: 0 auto 30px;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  color: var(--white);
+  overflow: hidden;
+  position: relative;
   transition: all 0.4s;
-  box-shadow: 0 10px 30px rgba(26, 61, 23, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.category-card.mamalia .category-icon {
-  background: linear-gradient(135deg, #d32f2f, #f44336);
-  box-shadow: 0 10px 30px rgba(211, 47, 47, 0.3);
+/* Border warna sesuai kategori */
+.category-card.mamalia .category-image {
+  border: 5px solid #d32f2f;
+  box-shadow: 0 10px 30px rgba(211, 47, 47, 0.35);
 }
 
-.category-card.aves .category-icon {
-  background: linear-gradient(135deg, #1976d2, #2196f3);
-  box-shadow: 0 10px 30px rgba(25, 118, 210, 0.3);
+.category-card.aves .category-image {
+  border: 5px solid #1976d2;
+  box-shadow: 0 10px 30px rgba(25, 118, 210, 0.35);
 }
 
-.category-card.herpetofauna .category-icon {
-  background: linear-gradient(135deg, #388e3c, #4caf50);
-  box-shadow: 0 10px 30px rgba(56, 142, 60, 0.3);
+.category-card.herpetofauna .category-image {
+  border: 5px solid #388e3c;
+  box-shadow: 0 10px 30px rgba(56, 142, 60, 0.35);
 }
 
-.category-card:hover .category-icon {
-  transform: scale(1.15) rotate(5deg);
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
 }
 
+/* Efek hover pada gambar */
+.category-card:hover .category-image {
+  transform: scale(1.08) rotate(3deg);
+}
+
+.category-card:hover .category-image img {
+  transform: scale(1.15);
+}
+
+/* Overlay gelap saat hover untuk efek dramatis */
+.category-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%);
+  transition: background 0.4s;
+}
+
+.category-card:hover .category-image::after {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+/* ========================================
+   CATEGORY CARD TEXT
+======================================== */
 .category-card h3 {
   font-size: 1.8rem;
   color: var(--primary-color);
@@ -403,7 +447,19 @@ tbody tr:nth-child(even) {
   color: var(--primary-color);
 }
 
-/* Responsive */
+/* ========================================
+   WILDLIFE GRID (COMPACT)
+======================================== */
+.wildlife-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (max-width: 1024px)
+======================================== */
 @media (max-width: 1024px) {
   .wp-hero h1 {
     font-size: 2.5rem;
@@ -422,93 +478,12 @@ tbody tr:nth-child(even) {
   }
 }
 
+/* ========================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+======================================== */
 @media (max-width: 768px) {
   .wp-hero {
     height: auto;
-    padding: 150px 0 80px;
-  }
-
-  .wp-hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.6rem;
-  }
-
-  .hero-tags {
-    font-size: 1rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .legal-item {
-    flex-direction: column;
-    padding: 25px;
-  }
-
-  .legal-number {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-  }
-
-  th, td {
-    padding: 15px 12px;
-    font-size: 0.95rem;
-  }
-
-  .category-card {
-    padding: 35px 25px;
-  }
-}
-
-@media (max-width: 480px) {
-  .wp-hero h1 {
-    font-size: 1.7rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.4rem;
-  }
-
-  .section-title {
-    font-size: 1.7rem;
-  }
-
-  .category-icon {
-    width: 90px;
-    height: 90px;
-    font-size: 2.5rem;
-  }
-}
-/* Grid untuk Cards - Lebih Compact */
-.wildlife-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Lebih kecil dari 320px */
-  gap: 25px; /* Lebih kecil dari 30px */
-  margin-top: 40px;
-}
-
-@media (max-width: 768px) {
-  .wildlife-grid {
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); /* Lebih kecil */
-    gap: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .wildlife-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}
-/* Tambahkan di akhir file */
-
-@media (max-width: 768px) {
-  .wp-hero {
     padding: 120px 0 60px;
     min-height: auto;
   }
@@ -535,29 +510,16 @@ tbody tr:nth-child(even) {
 
   .section-description {
     font-size: 1rem;
+    margin: 30px auto 40px;
   }
 
-  .categories-grid {
-    grid-template-columns: 1fr;
-    gap: 25px;
+  .intro-text {
+    font-size: 1rem;
+    padding: 0;
   }
 
-  .category-card {
-    padding: 30px 20px;
-  }
-
-  .category-icon {
-    width: 80px;
-    height: 80px;
-    font-size: 2rem;
-  }
-
-  .category-card h3 {
-    font-size: 1.4rem;
-  }
-
-  .category-card p {
-    font-size: 0.95rem;
+  .intro-highlight {
+    padding: 20px;
   }
 
   .legal-item {
@@ -576,16 +538,37 @@ tbody tr:nth-child(even) {
     font-size: 0.85rem;
   }
 
-  .intro-text {
-    font-size: 1rem;
-    padding: 0;
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
 
-  .intro-highlight {
-    padding: 20px;
+  .category-card {
+    padding: 30px 20px;
+  }
+
+  .category-image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .category-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .category-card p {
+    font-size: 0.95rem;
+  }
+
+  .wildlife-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
   }
 }
 
+/* ========================================
+   RESPONSIVE - SMALL MOBILE (max-width: 480px)
+======================================== */
 @media (max-width: 480px) {
   .wp-hero h1 {
     font-size: 1.5rem !important;
@@ -599,9 +582,18 @@ tbody tr:nth-child(even) {
     font-size: 1.5rem !important;
   }
 
-  .category-icon {
-    width: 70px;
-    height: 70px;
-    font-size: 1.8rem;
+  .category-image {
+    width: 120px;
+    height: 120px;
+    border-width: 4px;
+  }
+
+  .category-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .wildlife-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }

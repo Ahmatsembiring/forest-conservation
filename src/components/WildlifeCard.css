@@ -352,3 +352,57 @@
     height: 40px;
   }
 }
+/* Tambahkan di bagian bawah file CSS */
+
+/* Status Icon Styles */
+.card-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.status-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.modal-status-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.status-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsive untuk icon */
+@media (max-width: 768px) {
+  .status-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .modal-status-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .status-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .card-status {
+    gap: 8px;
+  }
+}
