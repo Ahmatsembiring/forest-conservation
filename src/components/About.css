@@ -1,101 +1,492 @@
+/* ========================================
+   ABOUT PAGE - BKHIT LAMPUNG
+======================================== */
 .about {
   background: var(--bg-light);
 }
 
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 80px;
+/* Section Container */
+.about-section {
+  margin-bottom: 100px;
+  padding: 60px 0;
 }
 
-.feature-card {
-  background: var(--white);
-  padding: 40px 30px;
-  border-radius: 15px;
+.about-section:last-child {
+  margin-bottom: 0;
+}
+
+/* Section Header */
+.section-header {
   text-align: center;
-  box-shadow: var(--shadow);
-  transition: all 0.3s ease;
+  margin-bottom: 60px;
 }
 
-.feature-icon {
-  font-size: 3.5rem;
+.section-header-icon {
+  font-size: 2.5rem;
   color: var(--accent-color);
   margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
 }
 
-.feature-card h3 {
-  font-size: 1.4rem;
+.section-header h3 {
+  font-size: 2.2rem;
   color: var(--primary-color);
   margin-bottom: 15px;
+  font-weight: 700;
 }
 
-.feature-card p {
+.section-subtitle {
+  font-size: 1.1rem;
   color: var(--text-light);
-  line-height: 1.7;
-}
-
-.about-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  margin-top: 60px;
-}
-
-.about-text h3 {
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 25px;
-}
-
-.about-text p {
-  color: var(--text-light);
-  margin-bottom: 20px;
+  max-width: 800px;
+  margin: 0 auto;
   line-height: 1.8;
 }
 
-.about-image {
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+/* ========================================
+   TIMELINE (SEJARAH)
+======================================== */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 0;
 }
 
-.about-image img {
-  width: 100%;
+/* Garis vertikal di tengah */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s;
+  background: linear-gradient(180deg, var(--accent-color), var(--primary-color));
+  border-radius: 10px;
 }
 
-.about-image:hover img {
-  transform: scale(1.05);
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  margin-bottom: 30px;
 }
 
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-content {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: all 0.3s;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-year {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  color: var(--white);
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(124, 179, 66, 0.3);
+}
+
+.timeline-content h4 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.timeline-content p {
+  color: var(--text-light);
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Dot di tengah garis */
+.timeline-dot {
+  position: absolute;
+  top: 35px;
+  width: 20px;
+  height: 20px;
+  background: var(--accent-color);
+  border: 4px solid var(--white);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px var(--accent-color);
+  z-index: 1;
+}
+
+.timeline-item.left .timeline-dot {
+  right: -10px;
+}
+
+.timeline-item.right .timeline-dot {
+  left: -10px;
+}
+
+/* ========================================
+   LEGAL GRID (DASAR HUKUM)
+======================================== */
+.legal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.legal-card {
+  background: var(--white);
+  padding: 35px 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--accent-color);
+}
+
+.legal-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--white);
+  box-shadow: 0 8px 20px rgba(124, 179, 66, 0.3);
+}
+
+.legal-card h4 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.legal-card p {
+  color: var(--text-light);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ========================================
+   FUNCTIONS GRID (TUGAS & FUNGSI)
+======================================== */
+.functions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.function-card {
+  background: var(--white);
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.function-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.function-card:hover::before {
+  transform: scaleX(1);
+}
+
+.function-icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 25px;
+  background: linear-gradient(135deg, rgba(124, 179, 66, 0.1), rgba(26, 61, 23, 0.1));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  transition: all 0.4s;
+}
+
+.function-card:hover .function-icon {
+  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  color: var(--white);
+  transform: scale(1.1) rotate(5deg);
+}
+
+.function-card h4 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.function-card p {
+  color: var(--text-light);
+  line-height: 1.7;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ========================================
+   WORK AREAS (WILAYAH KERJA)
+======================================== */
+.work-areas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+}
+
+.work-area-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--white);
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 5px solid var(--accent-color);
+}
+
+.work-area-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--white);
+  flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(124, 179, 66, 0.3);
+}
+
+.work-area-content h4 {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.work-area-content p {
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ========================================
+   HIGHLIGHT BOX (BAKAUHENI)
+======================================== */
+.highlight-box {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  box-shadow: 0 15px 40px rgba(26, 61, 23, 0.3);
+  color: var(--white);
+}
+
+.highlight-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  backdrop-filter: blur(10px);
+}
+
+.highlight-content h4 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #a5d6a7;
+}
+
+.highlight-content p {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET (max-width: 968px)
+======================================== */
 @media (max-width: 968px) {
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .timeline::before {
+    left: 30px;
   }
 
-  .features-grid {
-    grid-template-columns: 1fr;
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 20px;
+    text-align: left !important;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+  }
+
+  .timeline-item.left .timeline-dot,
+  .timeline-item.right .timeline-dot {
+    left: 20px;
+    right: auto;
+  }
+
+  .highlight-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
   }
 }
 
+/* ========================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+======================================== */
 @media (max-width: 768px) {
-  .feature-card {
-    padding: 30px 20px;
+  .about-section {
+    margin-bottom: 60px;
+    padding: 40px 0;
   }
 
-  .feature-icon {
-    font-size: 2.5rem;
+  .section-header h3 {
+    font-size: 1.7rem;
   }
 
-  .about-text h3 {
-    font-size: 1.6rem;
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  .timeline-content h4 {
+    font-size: 1.2rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.95rem;
+  }
+
+  .legal-grid,
+  .functions-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .work-areas {
+    grid-template-columns: 1fr;
+  }
+
+  .work-area-card {
+    padding: 20px;
+  }
+
+  .highlight-content h4 {
+    font-size: 1.2rem;
+  }
+
+  .highlight-content p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ========================================
+   RESPONSIVE - SMALL MOBILE (max-width: 480px)
+======================================== */
+@media (max-width: 480px) {
+  .section-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .section-header-icon {
+    font-size: 2rem;
+  }
+
+  .timeline-item {
+    padding-left: 60px;
+  }
+
+  .timeline-year {
+    font-size: 0.95rem;
+    padding: 6px 15px;
+  }
+
+  .legal-card,
+  .function-card {
+    padding: 25px 20px;
+  }
+
+  .legal-icon,
+  .function-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+
+  .work-area-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  .highlight-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2rem;
   }
 }
