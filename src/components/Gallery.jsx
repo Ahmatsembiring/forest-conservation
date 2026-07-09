@@ -23,20 +23,20 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null)
 
   const images = [
-    { id: 1, src: foto1, alt: 'Gajah Sumatera', caption: 'Satwa Dilindungi' },
-    { id: 2, src: foto2, alt: 'Harimau Sumatera', caption: 'Satwa Dilindungi' },
-    { id: 3, src: foto3, alt: 'Orangutan', caption: 'Satwa Dilindungi' },
-    { id: 4, src: foto4, alt: 'Badak Sumatera', caption: 'Satwa Dilindungi' },
-    { id: 5, src: foto5, alt: 'Elang Jawa', caption: 'Burung Endemik' },
-    { id: 6, src: foto6, alt: 'Kakatua', caption: 'Burung Dilindungi' },
-    { id: 7, src: foto7, alt: 'Penyu', caption: 'Satwa Laut' },
-    { id: 8, src: foto8, alt: 'Komodo', caption: 'Satwa Endemik' },
-    { id: 9, src: foto9, alt: 'Dr. Ahmad Santoso', caption: 'Kepala Balai' },
-    { id: 10, src: foto10, alt: 'Dr. Siti Nurhaliza', caption: 'Kepala Subbagian Umum' },
-    { id: 11, src: foto11, alt: 'Ir. Budi Wijaya', caption: 'Karantina Hewan' },
-    { id: 12, src: foto12, alt: 'Drh. Rina Susanti', caption: 'Karantina Ikan' },
-    { id: 13, src: foto13, alt: 'Ir. Hendro Prasetyo', caption: 'Karantina Tumbuhan' },
-    { id: 14, src: foto14, alt: 'Tim Lapangan', caption: 'Petugas Karantina' },
+    { id: 1, src: foto1 },
+    { id: 2, src: foto2 },
+    { id: 3, src: foto3 },
+    { id: 4, src: foto4 },
+    { id: 5, src: foto5 },
+    { id: 6, src: foto6 },
+    { id: 7, src: foto7 },
+    { id: 8, src: foto8 },
+    { id: 9, src: foto9 },
+    { id: 10, src: foto10 },
+    { id: 11, src: foto11 },
+    { id: 12, src: foto12 },
+    { id: 13, src: foto13 },
+    { id: 14, src: foto14 },
   ]
 
   return (
@@ -65,11 +65,11 @@ const Gallery = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ delay: index * 0.05, duration: 0.5 }}
-              whileHover={{ scale: 1.03, y: -5 }}
+              whileHover={{ scale: 1.03 }}
               onClick={() => setSelectedImage(image)}
             >
               <div className="image-wrapper">
-                <img src={image.src} alt={image.alt} loading="lazy" />
+                <img src={image.src} alt={`Gallery ${image.id}`} loading="lazy" />
                 <motion.div 
                   className="gallery-overlay"
                   initial={{ opacity: 0 }}
@@ -77,13 +77,9 @@ const Gallery = () => {
                 >
                   <div className="overlay-content">
                     <FaSearchPlus className="overlay-icon" />
-                    <span>{image.caption}</span>
+                    <span>Lihat Foto</span>
                   </div>
                 </motion.div>
-              </div>
-              <div className="image-info">
-                <h4>{image.alt}</h4>
-                <p>{image.caption}</p>
               </div>
             </motion.div>
           ))}
@@ -111,17 +107,12 @@ const Gallery = () => {
             
             <motion.img 
               src={selectedImage.src} 
-              alt={selectedImage.alt}
+              alt="Gallery Preview"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             />
-            
-            <div className="lightbox-info">
-              <h3>{selectedImage.alt}</h3>
-              <p>{selectedImage.caption}</p>
-            </div>
           </motion.div>
         )}
       </AnimatePresence>
