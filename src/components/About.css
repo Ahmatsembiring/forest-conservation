@@ -361,6 +361,28 @@
 }
 
 /* ========================================
+   STRUKTUR ORGANISASI (FOTO)
+======================================== */
+.struktur-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  padding: 40px 20px;
+  background: var(--white);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.struktur-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+/* ========================================
    RESPONSIVE - TABLET (max-width: 968px)
 ======================================== */
 @media (max-width: 968px) {
@@ -443,6 +465,15 @@
   .highlight-content p {
     font-size: 0.95rem;
   }
+
+  .struktur-container {
+    padding: 30px 15px;
+    margin-top: 40px;
+  }
+
+  .struktur-image {
+    border-radius: 10px;
+  }
 }
 
 /* ========================================
@@ -488,5 +519,10 @@
     width: 60px;
     height: 60px;
     font-size: 2rem;
+  }
+
+  .struktur-container {
+    padding: 20px 10px;
+    margin-top: 30px;
   }
 }

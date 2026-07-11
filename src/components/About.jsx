@@ -5,6 +5,7 @@ import {
   FaBalanceScale, FaClipboardCheck, FaSearch
 } from 'react-icons/fa'
 import './About.css'
+import strukturOrg from '../assets/images/struktur.jpeg'
 
 const About = () => {
   // Timeline Sejarah
@@ -284,6 +285,28 @@ const About = () => {
               </p>
             </div>
           </motion.div>
+        </motion.div>
+
+        {/* ===== SECTION 5: STRUKTUR ORGANISASI ===== */}
+        <motion.div 
+          className="about-section"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="struktur-container">
+            <motion.img 
+              src={strukturOrg} 
+              alt="Struktur Organisasi BKHIT Lampung"
+              className="struktur-image"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              whileHover={{ scale: 1.01 }}
+            />
+          </div>
         </motion.div>
 
       </div>
