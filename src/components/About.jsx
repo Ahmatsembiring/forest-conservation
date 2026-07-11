@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { 
   FaGavel, FaShieldAlt, FaMapMarkerAlt, 
   FaShip, FaPlane, FaTruck, FaBuilding, FaHistory,
-  FaBalanceScale, FaClipboardCheck, FaSearch
+  FaBalanceScale, FaClipboardCheck, FaSearch, FaUsers
 } from 'react-icons/fa'
 import './About.css'
 import strukturOrg from '../assets/images/struktur.jpeg'
@@ -229,7 +229,35 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* ===== SECTION 4: WILAYAH KERJA ===== */}
+        {/* ===== SECTION 4: STRUKTUR ORGANISASI ===== */}
+        <motion.div 
+          className="about-section"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="section-header">
+            <FaUsers className="section-header-icon" />
+            <h3>Struktur Organisasi</h3>
+            <p className="section-subtitle">Susunan organisasi Balai Karantina Hewan, Ikan dan Tumbuhan Lampung</p>
+          </div>
+          
+          <div className="struktur-container">
+            <motion.img 
+              src={strukturOrg} 
+              alt="Struktur Organisasi BKHIT Lampung"
+              className="struktur-image"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              whileHover={{ scale: 1.01 }}
+            />
+          </div>
+        </motion.div>
+
+        {/* ===== SECTION 5: WILAYAH KERJA ===== */}
         <motion.div 
           className="about-section"
           initial={{ opacity: 0, y: 50 }}
@@ -264,30 +292,9 @@ const About = () => {
               </motion.div>
             ))}
           </div>
-
-          {/* Highlight Bakauheni */}
-          <motion.div 
-            className="highlight-box"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="highlight-icon">
-              <FaTruck />
-            </div>
-            <div className="highlight-content">
-              <h4>Satpel Bakauheni — Garda Terdepan</h4>
-              <p>
-                Sebagai jalur penyeberangan tersibuk Sumatra–Jawa, Satpel Bakauheni menjadi titik paling strategis 
-                dalam struktur wilayah kerja BKHIT Lampung. Tingginya volume kendaraan pribadi, bus antar provinsi, 
-                dan truk ekspedisi menjadikannya garda terdepan pengawasan lalu lintas hewan, ikan, dan tumbuhan.
-              </p>
-            </div>
-          </motion.div>
         </motion.div>
 
-        {/* ===== SECTION 5: STRUKTUR ORGANISASI ===== */}
+        {/* ===== SECTION 6: SATPEL BAKAUHENI HIGHLIGHT ===== */}
         <motion.div 
           className="about-section"
           initial={{ opacity: 0, y: 50 }}
@@ -295,17 +302,38 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="struktur-container">
-            <motion.img 
-              src={strukturOrg} 
-              alt="Struktur Organisasi BKHIT Lampung"
-              className="struktur-image"
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+          <div className="bakauheni-highlight">
+            <motion.div 
+              className="bakauheni-icon-wrapper"
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              whileHover={{ scale: 1.01 }}
-            />
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <FaTruck className="bakauheni-icon" />
+            </motion.div>
+            <div className="bakauheni-content">
+              <motion.h3 
+                className="bakauheni-title"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                Satpel Bakauheni — Garda Terdepan
+              </motion.h3>
+              <motion.p 
+                className="bakauheni-description"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                Sebagai jalur penyeberangan tersibuk Sumatra–Jawa, Satpel Bakauheni menjadi titik paling strategis 
+                dalam struktur wilayah kerja BKHIT Lampung. Tingginya volume kendaraan pribadi, bus antar provinsi, 
+                dan truk ekspedisi menjadikannya garda terdepan pengawasan lalu lintas hewan, ikan, dan tumbuhan.
+              </motion.p>
+            </div>
           </div>
         </motion.div>
 
