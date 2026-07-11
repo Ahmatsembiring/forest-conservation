@@ -4,39 +4,27 @@ import { FaTimes, FaSearchPlus } from 'react-icons/fa'
 import './Gallery.css'
 
 // Import semua foto dari folder gallery
-import foto1 from '../assets/images/gallery/foto1.jpeg'
-import foto2 from '../assets/images/gallery/foto2.jpeg'
-import foto3 from '../assets/images/gallery/foto3.jpeg'
-import foto4 from '../assets/images/gallery/foto4.jpeg'
-import foto5 from '../assets/images/gallery/foto5.jpeg'
-import foto6 from '../assets/images/gallery/foto6.jpeg'
-import foto7 from '../assets/images/gallery/foto7.jpeg'
-import foto8 from '../assets/images/gallery/foto8.jpeg'
-import foto9 from '../assets/images/gallery/foto9.jpeg'
-import foto10 from '../assets/images/gallery/foto10.jpeg'
-import foto11 from '../assets/images/gallery/foto11.jpeg'
-import foto12 from '../assets/images/gallery/foto12.jpeg'
-import foto13 from '../assets/images/gallery/foto13.jpeg'
-import foto14 from '../assets/images/gallery/foto14.jpeg'
+import gam1 from '../assets/images/gallery/gam1.jpg'
+import gam2 from '../assets/images/gallery/gam2.jpg'
+import gam3 from '../assets/images/gallery/gam3.jpg'
+import gam4 from '../assets/images/gallery/gam4.jpg'
+import gam5 from '../assets/images/gallery/gam5.jpg'
+import gam6 from '../assets/images/gallery/gam6.jpg'
+import gam7 from '../assets/images/gallery/gam7.jpg'
+
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null)
 
   const images = [
-    { id: 1, src: foto1 },
-    { id: 2, src: foto2 },
-    { id: 3, src: foto3 },
-    { id: 4, src: foto4 },
-    { id: 5, src: foto5 },
-    { id: 6, src: foto6 },
-    { id: 7, src: foto7 },
-    { id: 8, src: foto8 },
-    { id: 9, src: foto9 },
-    { id: 10, src: foto10 },
-    { id: 11, src: foto11 },
-    { id: 12, src: foto12 },
-    { id: 13, src: foto13 },
-    { id: 14, src: foto14 },
+    { id: 1, src: gam1 },
+    { id: 2, src: gam2 },
+    { id: 3, src: gam3 },
+    { id: 4, src: gam4 },
+    { id: 5, src: gam5 },
+    { id: 6, src: gam6 },
+    { id: 7, src: gam7 },
+   
   ]
 
   return (

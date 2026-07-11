@@ -1,35 +1,40 @@
 import { motion } from 'framer-motion'
-import { FaCalendar, FaUser, FaArrowRight } from 'react-icons/fa'
+import { FaCalendar, FaUser } from 'react-icons/fa'
 import './Blog.css'
+
+// Import gambar
+import img1 from '../assets/images/gajah.jpg'
+import img2 from '../assets/images/tapir.jpeg'
+import img3 from '../assets/images/komodo.webp'
 
 const Blog = () => {
   const articles = [
     {
       id: 1,
-      title: 'The Impact of Deforestation on Climate Change',
-      excerpt: 'Exploring how forest loss contributes to global warming and what we can do to stop it.',
-      image: 'https://images.unsplash.com/photo-1621451537084-482c7113f9f2?w=600&q=80',
-      author: 'Dr. Sarah Johnson',
-      date: 'June 15, 2026',
-      category: 'Climate'
+      title: 'Perdagangan Satwa Liar Ilegal di Indonesia: Ancaman bagi Keanekaragaman Hayati',
+      excerpt: 'Perdagangan satwa liar ilegal menjadi salah satu penyebab utama penurunan populasi berbagai spesies di Indonesia. Praktik ini mengancam keseimbangan ekosistem serta mendorong banyak satwa menuju kepunahan.',
+      image: img1,
+      author: 'Admin',
+      date: '5 Juli 2026',
+      category: 'ILLEGAL WILDLIFE TRADE'
     },
     {
       id: 2,
-      title: 'Sustainable Forestry: A Path Forward',
-      excerpt: 'Learn about sustainable practices that balance economic needs with environmental protection.',
-      image: 'https://images.unsplash.com/photo-1584467115408-6a6f0a4f3c3c?w=600&q=80',
-      author: 'Michael Chen',
-      date: 'June 10, 2026',
-      category: 'Sustainability'
+      title: 'Satwa yang Paling Sering Diperdagangkan Secara Ilegal di Indonesia',
+      excerpt: 'Indonesia merupakan habitat berbagai satwa endemik yang memiliki nilai ekonomi tinggi di pasar gelap. Burung kicau, trenggiling, kukang, orangutan, dan reptil termasuk satwa yang paling sering menjadi target perdagangan ilegal.',
+      image: img2,
+      author: 'Admin',
+      date: '1 Juli 2026',
+      category: 'PROTECTED SPECIES'
     },
     {
       id: 3,
-      title: 'Wildlife Conservation Success Stories',
-      excerpt: 'Inspiring tales of species recovery thanks to dedicated conservation efforts.',
-      image: 'https://images.unsplash.com/photo-1535083783855-76ae62b2914e?w=600&q=80',
-      author: 'Emma Williams',
-      date: 'June 5, 2026',
-      category: 'Wildlife'
+      title: 'Peran Masyarakat dalam Mencegah Perdagangan Satwa Liar',
+      excerpt: 'Keberhasilan konservasi tidak hanya bergantung pada pemerintah, tetapi juga partisipasi masyarakat. Melalui edukasi, pelaporan aktivitas ilegal, dan penolakan membeli satwa dilindungi, masyarakat dapat membantu melindungi keanekaragaman hayati Indonesia.',
+      image: img3,
+      author: 'Admin',
+      date: '28 Juni 2026',
+      category: 'CONSERVATION'
     }
   ]
 
@@ -43,8 +48,7 @@ const Blog = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
-          <h2>Latest Articles</h2>
-          <p>Stay informed about forest conservation and environmental issues</p>
+          <h2>STOP PERDAGANGAN SATWA LIAR</h2>
         </motion.div>
 
         <div className="blog-grid">
@@ -77,34 +81,10 @@ const Blog = () => {
                 </div>
                 <h3>{article.title}</h3>
                 <p>{article.excerpt}</p>
-                <motion.button 
-                  className="read-more"
-                  whileHover={{ x: 10 }}
-                >
-                  Read More <FaArrowRight />
-                </motion.button>
               </div>
             </motion.article>
           ))}
         </div>
-
-        <motion.div 
-          className="blog-cta"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h3>Want to Learn More?</h3>
-          <p>Subscribe to our newsletter for the latest updates on forest conservation</p>
-          <motion.button 
-            className="btn-primary"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View All Articles
-          </motion.button>
-        </motion.div>
       </div>
     </section>
   )
