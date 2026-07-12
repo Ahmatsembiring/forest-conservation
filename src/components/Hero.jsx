@@ -76,25 +76,7 @@ const Hero = () => {
               Rhino, and Orangutan. Protecting them means protecting our future.
             </motion.p>
 
-            <motion.div 
-              className="hero-stats"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-            >
-              <div className="stat-item">
-                <h3>50%</h3>
-                <p>Species Habitat</p>
-              </div>
-              <div className="stat-item">
-                <h3>1.6B</h3>
-                <p>People Depend</p>
-              </div>
-              <div className="stat-item">
-                <h3>30%</h3>
-                <p>Land Coverage</p>
-              </div>
-            </motion.div>
+           
           </div>
 
           {/* Photo Gallery Strip - Bottom Right */}
