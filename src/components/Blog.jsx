@@ -3,7 +3,7 @@ import { FaCalendar, FaUser } from 'react-icons/fa'
 import './Blog.css'
 
 // Import gambar
-import img1 from '../assets/images/gajah.jpg'
+import blog from '../assets/images/Blog1.jpeg'
 import img2 from '../assets/images/tapir.jpeg'
 import img3 from '../assets/images/komodo.webp'
 
@@ -13,7 +13,7 @@ const Blog = () => {
       id: 1,
       title: 'Perdagangan Satwa Liar Ilegal di Indonesia: Ancaman bagi Keanekaragaman Hayati',
       excerpt: 'Perdagangan satwa liar ilegal menjadi salah satu penyebab utama penurunan populasi berbagai spesies di Indonesia. Praktik ini mengancam keseimbangan ekosistem serta mendorong banyak satwa menuju kepunahan.',
-      image: img1,
+      image: blog,
       author: 'Admin',
       date: '5 Juli 2026',
       category: 'ILLEGAL WILDLIFE TRADE'
