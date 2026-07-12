@@ -74,7 +74,7 @@ const Footer = () => {
                   <FaPhone />
                 </div>
                 <a href="tel:+6272131305" className="contact-text">
-                  0721-31305
+                  08111828286
                 </a>
               </li>
               
