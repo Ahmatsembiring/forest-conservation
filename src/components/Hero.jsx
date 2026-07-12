@@ -10,10 +10,10 @@ import forest from "../assets/images/orangutan.webp";
 const Hero = () => {
   // Foto satwa dan alam untuk gallery strip
   const galleryPhotos = [
-    { id: 1, src: berries, alt: 'Red Berries' }, // Ganti URL dengan variabel berries
-    { id: 2, src: orangutan, alt: 'Orangutan' }, // Ganti URL dengan variabel orangutan
-    { id: 3, src: squirrel, alt: 'Squirrel' },   // Ganti URL dengan variabel squirrel
-    { id: 4, src: forest, alt: 'Forest' },       // Ganti URL dengan variabel forest
+    { id: 1, src: berries, alt: 'Red Berries' },
+    { id: 2, src: orangutan, alt: 'Orangutan' },
+    { id: 3, src: squirrel, alt: 'Squirrel' },
+    { id: 4, src: forest, alt: 'Forest' },
   ]
 
   return (
@@ -26,23 +26,29 @@ const Hero = () => {
         {/* Social Media Sidebar - Right Side */}
         <div className="social-sidebar">
           <motion.a 
-            href="#" 
+            href="https://www.facebook.com/karantinalampung" 
             className="social-icon"
             whileHover={{ scale: 1.2, x: 5 }}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FaFacebookF />
           </motion.a>
           <motion.a 
-            href="#" 
+            href="https://twitter.com/karantinalampung" 
             className="social-icon"
             whileHover={{ scale: 1.2, x: 5 }}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FaTwitter />
           </motion.a>
           <motion.a 
-            href="#" 
+            href="https://www.instagram.com/karantinalampung/?__pwa=1" 
             className="social-icon"
             whileHover={{ scale: 1.2, x: 5 }}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <FaInstagram />
           </motion.a>
@@ -69,8 +75,6 @@ const Hero = () => {
               Indonesia is home to rare wildlife like the Sumatran Tiger, Elephant, 
               Rhino, and Orangutan. Protecting them means protecting our future.
             </motion.p>
-
-            
 
             <motion.div 
               className="hero-stats"

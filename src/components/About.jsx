@@ -56,7 +56,12 @@ const About = () => {
     },
     {
       icon: <FaClipboardCheck />,
-      title: 'Perban No. 2 Tahun 2024',
+      title: 'Perbarantin No. 2 Tahun 2024',
+      description: 'Rencana Strategis Badan Karantina Indonesia 2024 sebagai acuan penyusunan Renstra tiap UPT.'
+    },
+     {
+      icon: <FaClipboardCheck />,
+      title: 'Permen',
       description: 'Rencana Strategis Badan Karantina Indonesia 2024 sebagai acuan penyusunan Renstra tiap UPT.'
     }
   ]
