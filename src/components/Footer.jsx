@@ -73,8 +73,8 @@ const Footer = () => {
                 <div className="contact-icon blue">
                   <FaPhone />
                 </div>
-                <a href="tel:+15551234567" className="contact-text">
-                  +1 (555) 123-4567
+                <a href="tel:+6272131305" className="contact-text">
+                  0721-31305
                 </a>
               </li>
               
@@ -83,7 +83,7 @@ const Footer = () => {
                   <FaEnvelope />
                 </div>
                 <a href="mailto:info@greenale.org" className="contact-text">
-                  info@greenale.org
+                  karantinalampung@karantinaindonesia.go.id
                 </a>
               </li>
             </ul>
