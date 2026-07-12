@@ -26,7 +26,7 @@ const Hero = () => {
         {/* Social Media Sidebar - Right Side */}
         <div className="social-sidebar">
           <motion.a 
-            href="https://www.facebook.com/karantinalampung" 
+            href="https://web.facebook.com/profile.php?id=61577378520714&rdid=..." 
             className="social-icon"
             whileHover={{ scale: 1.2, x: 5 }}
             target="_blank"
@@ -35,7 +35,7 @@ const Hero = () => {
             <FaFacebookF />
           </motion.a>
           <motion.a 
-            href="https://twitter.com/karantinalampung" 
+            href="https://x.com/BarantinRI" 
             className="social-icon"
             whileHover={{ scale: 1.2, x: 5 }}
             target="_blank"
