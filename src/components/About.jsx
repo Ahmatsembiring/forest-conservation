@@ -2,7 +2,8 @@ import { motion } from 'framer-motion'
 import { 
   FaGavel, FaShieldAlt, FaMapMarkerAlt, 
   FaShip, FaPlane, FaTruck, FaBuilding, FaHistory,
-  FaBalanceScale, FaClipboardCheck, FaSearch, FaUsers
+  FaBalanceScale, FaClipboardCheck, FaSearch, FaUsers,
+  FaFilePdf, FaDownload
 } from 'react-icons/fa'
 import './About.css'
 import strukturOrg from '../assets/images/struktur.jpeg'
@@ -37,32 +38,37 @@ const About = () => {
     }
   ]
 
-  // Dasar Hukum
+  // Dasar Hukum dengan Link PDF
   const legalBases = [
     {
       icon: <FaBalanceScale />,
       title: 'UU No. 21 Tahun 2019',
-      description: 'Karantina Hewan, Ikan, dan Tumbuhan — dasar hukum utama seluruh kegiatan perkarantinaan nasional.'
+      description: 'Karantina Hewan, Ikan, dan Tumbuhan — dasar hukum utama seluruh kegiatan perkarantinaan nasional.',
+      pdf: '/pdf/UU Nomor 21 Tahun 2019.pdf'
     },
     {
       icon: <FaBuilding />,
       title: 'Perpres No. 45 Tahun 2023',
-      description: 'Pembentukan Badan Karantina Indonesia beserta unit pelaksana teknisnya di daerah.'
+      description: 'Pembentukan Badan Karantina Indonesia beserta unit pelaksana teknisnya di daerah.',
+      pdf: '/pdf/Perpres Nomor 45 Tahun 2023.pdf'
     },
     {
       icon: <FaGavel />,
       title: 'UU No. 32 Tahun 2024',
-      description: 'Konservasi Sumber Daya Alam Hayati — relevan dalam pengawasan lalu lintas tumbuhan dan satwa liar/dilindungi.'
+      description: 'Konservasi Sumber Daya Alam Hayati — relevan dalam pengawasan lalu lintas tumbuhan dan satwa liar/dilindungi.',
+      pdf: '/pdf/UU Nomor 32 Tahun 2024.pdf'
     },
     {
       icon: <FaClipboardCheck />,
       title: 'Perbarantin No. 2 Tahun 2024',
-      description: 'Rencana Strategis Badan Karantina Indonesia 2024 sebagai acuan penyusunan Renstra tiap UPT.'
+      description: 'Rencana Strategis Badan Karantina Indonesia 2024 sebagai acuan penyusunan Renstra tiap UPT.',
+      pdf: '/pdf/2024perbarantin02.pdf'
     },
-     {
+    {
       icon: <FaClipboardCheck />,
       title: 'Permen',
-      description: 'Rencana Strategis Badan Karantina Indonesia 2024 sebagai acuan penyusunan Renstra tiap UPT.'
+      description: 'Rencana Strategis Badan Karantina Indonesia 2024 sebagai acuan penyusunan Renstra tiap UPT.',
+      pdf: '/pdf/permenlhk-nomor-p.106-tahun-2018.pdf'
     }
   ]
 
@@ -193,6 +199,25 @@ const About = () => {
                 <div className="legal-icon">{legal.icon}</div>
                 <h4>{legal.title}</h4>
                 <p>{legal.description}</p>
+                
+                {/* PDF Buttons */}
+                <div className="legal-actions">
+                  <a 
+                    href={legal.pdf} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="btn-pdf view"
+                  >
+                    <FaFilePdf /> Lihat PDF
+                  </a>
+                  <a 
+                    href={legal.pdf} 
+                    download
+                    className="btn-pdf download"
+                  >
+                    <FaDownload /> Download
+                  </a>
+                </div>
               </motion.div>
             ))}
           </div>

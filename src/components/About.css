@@ -655,3 +655,75 @@
     font-size: 0.95rem;
   }
 }
+/* ========================================
+   PDF BUTTONS (LEGAL CARDS)
+======================================== */
+.legal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-pdf.view {
+  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  color: var(--white);
+  box-shadow: 0 4px 12px rgba(124, 179, 66, 0.3);
+}
+
+.btn-pdf.view:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(124, 179, 66, 0.4);
+}
+
+.btn-pdf.download {
+  background: var(--white);
+  color: var(--primary-color);
+  border: 2px solid var(--accent-color);
+}
+
+.btn-pdf.download:hover {
+  background: var(--accent-color);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(124, 179, 66, 0.3);
+}
+
+.btn-pdf svg {
+  font-size: 1rem;
+}
+
+/* Responsive untuk PDF buttons */
+@media (max-width: 768px) {
+  .legal-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .btn-pdf {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-pdf {
+    font-size: 0.8rem;
+    padding: 10px 15px;
+  }
+}
