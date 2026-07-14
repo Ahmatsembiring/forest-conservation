@@ -66,7 +66,7 @@ const About = () => {
     },
     {
       icon: <FaClipboardCheck />,
-      title: 'Permen',
+      title: 'Permen LHK P.106/2018',
       description: 'Rencana Strategis Badan Karantina Indonesia 2024 sebagai acuan penyusunan Renstra tiap UPT.',
       pdf: '/pdf/permenlhk-nomor-p.106-tahun-2018.pdf'
     }
