@@ -4,13 +4,13 @@
 
 /* ===== BACKGROUND KEHUTANAN PREMIUM ===== */
 /* ===== BACKGROUND KEHUTANAN PREMIUM ===== */
+/* ===== BACKGROUND KEHUTANAN PREMIUM ===== */
 .about {
   background: var(--bg-light);
   position: relative;
   overflow: hidden;
 }
 
-/* Pseudo-element untuk background image */
 .about::before {
   content: '';
   position: absolute;
@@ -18,9 +18,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  /* Opacity lebih rendah agar gambar hutan lebih terlihat */
+  /* Opacity sangat rendah - gambar hutan sangat terlihat */
   background: 
-    linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0%, rgba(240, 248, 240, 0.80) 100%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.40) 0%, rgba(240, 248, 240, 0.45) 100%),
     url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&q=80');
   background-size: cover;
   background-position: center;
@@ -30,7 +30,6 @@
   pointer-events: none;
 }
 
-/* Memastikan semua konten Anda berada DI ATAS background */
 .about .container {
   position: relative;
   z-index: 1;
@@ -763,4 +762,15 @@
     font-size: 0.8rem;
     padding: 10px 15px;
   }
+}
+
+/* Fix teks subtitle agar terlihat jelas - HITAM */
+.about .section-title p,
+.about .section-subtitle {
+    color: #000 !important;
+    font-weight: 700 !important;
+    text-shadow:
+        0 0 10px rgba(255,255,255,1),
+        0 0 20px rgba(255,255,255,1),
+        2px 2px 4px rgba(255,255,255,.9) !important;
 }
