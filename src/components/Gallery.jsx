@@ -19,44 +19,44 @@ const Gallery = () => {
     { 
       id: 1, 
       src: gam1,
-      title: 'Penanaman Pohon',
-      description: 'Kegiatan penanaman pohon di kawasan hutan'
+      title: 'Penanganan',
+      description: 'Proses penanganan hasil hutan oleh tim PKL di lapangan.'
     },
     { 
       id: 2, 
       src: gam2,
-      title: 'Patroli Hutan',
-      description: 'Patroli rutin untuk menjaga kelestarian hutan'
+      title: 'Pemeriksaan',
+      description: 'Pemeriksaan kualitas dan kelengkapan dokumen kayu.'
     },
     { 
       id: 3, 
       src: gam3,
-      title: 'Monitoring Satwa',
-      description: 'Pemantauan satwa liar di habitat aslinya'
+      title: 'Penahanan',
+      description: 'Kegiatan penahanan sementara barang bukti di posko.'
     },
     { 
       id: 4, 
       src: gam4,
       title: 'Edukasi Masyarakat',
-      description: 'Sosialisasi pentingnya konservasi hutan'
+      description: 'Sosialisasi dan edukasi konservasi kepada masyarakat setempat.'
     },
     { 
       id: 5, 
       src: gam5,
-      title: 'Tim PKL ITERA',
-      description: 'Dokumentasi tim PKL Rekayasa Kehutanan 2026'
+      title: 'Penahanan',
+      description: 'Dokumentasi proses pengamanan area hutan bersama petugas.'
     },
     { 
       id: 6, 
       src: gam6,
-      title: 'Kegiatan Lapangan',
-      description: 'Praktik langsung di lapangan bersama BKHIT'
+      title: 'Penahanan',
+      description: 'Pengawalan dan penahanan log ilegal di jalur transportasi.'
     },
     { 
       id: 7, 
       src: gam7,
-      title: 'Konservasi Hutan',
-      description: 'Upaya pelestarian hutan untuk generasi mendatang'
+      title: 'Penolakan',
+      description: 'Penolakan tegas terhadap aktivitas ilegal di kawasan hutan.'
     },
   ]
 
@@ -72,8 +72,7 @@ const Gallery = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
-          <h2>Galeri Tim PKL ITERA Rekayasa Kehutanan 2026 BKHIT Lampung</h2>
-          
+          <h2>Galeri Rekayasa Kehutanan 2026 BKHIT Lampung</h2>
         </motion.div>
 
         {/* Gallery Grid */}
@@ -98,10 +97,11 @@ const Gallery = () => {
                 >
                   <div className="overlay-content">
                     <FaSearchPlus className="overlay-icon" />
-                    <span>Lihat Foto</span>
+                    <span className="overlay-text">Lihat Foto</span>
                   </div>
                 </motion.div>
               </div>
+              
               {/* Image Info - Title & Description */}
               <div className="image-info">
                 <h4 className="image-title">{image.title}</h4>
