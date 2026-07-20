@@ -72,7 +72,7 @@ const Gallery = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8 }}
         >
-          <h2>Galeri Rekayasa Kehutanan 2026 BKHIT Lampung</h2>
+          <h2>Galeri Tim PKL ITERA Rekayasa Kehutanan 2026 BKHIT Lampung</h2>
         </motion.div>
 
         {/* Gallery Grid */}
